@@ -1,0 +1,117 @@
+/* Reset & basiques */
+body, html {
+  margin: 0; padding: 0; height: 100%;
+  font-family: Arial, sans-serif;
+  color: #222;
+}
+
+/* Bannière jaune horizontale */
+.top-banner {
+  background-color: #f5a623;
+  width: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.top-nav {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.top-nav a {
+  color: black;
+  text-decoration: none;
+  padding: 8px 15px;
+  font-weight: 600;
+}
+
+.top-nav a:hover {
+  background-color: #f2b94f;
+  border-radius: 4px;
+}
+
+/* Conteneur principal flex */
+.main-content {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  min-height: 70vh;
+  gap: 20px;
+}
+
+/* Bannière verticale à gauche */
+.side-banner {
+  background: white;
+  width: 25%;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 0 5px #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-photo {
+  width: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.desc {
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.side-banner p {
+  margin: 5px 0;
+  font-size: 0.95em;
+}
+
+.side-banner i {
+  margin-right: 8px;
+  color: #f5a623;
+}
+
+/* Contenu principal à droite */
+.content-area {
+  width: 75%;
+  background: #fafafa;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px #eee;
+  border-radius: 8px;
+}
+
+/* Titres */
+h2 {
+  color: #f5a623;
+  margin-bottom: 15px;
+}
+
+h3 {
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+  .main-content {
+    flex-direction: column;
+  }
+  .side-banner, .content-area {
+    width: 100%;
+  }
+  .top-nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .right-tabs {
+    margin-top: 10px;
+  }
+}
+
