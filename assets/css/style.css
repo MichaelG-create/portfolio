@@ -1,9 +1,60 @@
-/* Reset & basiques */
-body, html {
-  margin: 0; padding: 0; height: 100%;
-  font-family: Arial, sans-serif;
+/* TYPOGRAPHY */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1rem; /* 16px */
+  line-height: 1.6;
   color: #222;
+  margin: 0;
+  padding: 0;
 }
+
+/* HEADINGS */
+h1 {
+  font-size: 2.25rem; /* ~36px */
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.75rem; /* ~28px */
+  margin-bottom: 0.8rem;
+}
+
+h3 {
+  font-size: 1.375rem; /* ~22px */
+  margin-bottom: 0.6rem;
+}
+
+/* PARAGRAPHS */
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* STRONG (bold text) */
+strong {
+  font-weight: bold;
+}
+
+/* LISTS */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1.2rem;
+}
+
+li {
+  margin-bottom: 0.5rem; /* Space between list items */
+  line-height: 1.5;
+}
+
+/* SPACING HELPERS */
+.mt-2 { margin-top: 0.5rem; }
+.mt-4 { margin-top: 1rem; }
+.mt-6 { margin-top: 1.5rem; }
+
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+
 
 /* Bannière jaune horizontale */
 .top-banner {
@@ -87,7 +138,7 @@ body, html {
   border-radius: 8px;
 }
 
-/* Titres */
+/* Titres
 h2 {
   color: #f5a623;
   margin-bottom: 15px;
@@ -95,8 +146,14 @@ h2 {
 
 h3 {
   color: #333;
-  margin-top: 20px;
-}
+  /* margin-top: 20px; */
+/* } */
+
+/* ul li { */
+  /* margin-bottom: 12px; */
+  /* line-height: 1.5; */
+/* } */ */
+
 
 /* Responsive */
 @media (max-width: 800px) {
@@ -114,4 +171,3 @@ h3 {
     margin-top: 10px;
   }
 }
-
