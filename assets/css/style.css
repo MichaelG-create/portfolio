@@ -112,6 +112,13 @@ li {
   object-fit: cover;
 }
 
+.banner-photo {
+  /* width: 1401px; */
+  width: 860px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
 .desc {
   font-weight: 600;
   text-align: center;
