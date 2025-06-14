@@ -84,27 +84,8 @@ li {
   border-radius: 4px;
 }
 
-/* Conteneur principal flex */
-.main-content {
-  display: flex;
-  max-width: 1200px;
-  margin: 20px auto;
-  min-height: 70vh;
-  gap: 20px;
-}
 
 /* Bannière verticale à gauche */
-.side-banner {
-  background: white;
-  width: 25%;
-  padding: 20px;
-  box-sizing: border-box;
-  box-shadow: 0 0 5px #ddd;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
-}
 
 .profile-photo {
   width: 150px;
@@ -112,11 +93,20 @@ li {
   object-fit: cover;
 }
 
-.banner-photo {
-  /* width: 1401px; */
-  width: 860px;
+.banner-image {
+  width: 600px;
   border-radius: 16px;
   object-fit: cover;
+  display: block;
+  margin: 20px auto;
+}
+
+.name {
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.1em;
+  /* margin-bottom: 0; /*Supprime l'espace par défaut */
+  margin: 0 0 0.2em 0; /* top right bottom left */
 }
 
 .desc {
@@ -125,19 +115,47 @@ li {
   font-size: 1.1em;
 }
 
-.side-banner p {
+
+.side-banner p:not(.name):not(.desc) {
   margin: 5px 0;
   font-size: 0.95em;
 }
 
-.side-banner i {
+.side-banner .name {
+  font-weight: 600;
+  text-align: left;
+  font-size: 1.1em;
+  margin: 5px 0 2px 0; /* top right bottom left */
+}
+
+.side-banner .desc {
+  font-weight: 600;
+  text-align: left;
+  font-size: 1.1em;
+  margin: 0 0 5px 0;
+}
+
+.side-banner i {  
   margin-right: 8px;
   color: #f5a623;
 }
 
-/* Contenu principal à droite */
+.main-content {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  min-height: 70vh;
+  gap: 20px;
+}
+
+.side-banner {
+  width: 300px;
+  min-width: 250px; /* Minimum pour rester lisible */
+}
+
 .content-area {
   width: 75%;
+  /* max-width: 900px; AJOUTEZ JUSTE CETTE LIGNE */
   background: #fafafa;
   padding: 20px;
   box-sizing: border-box;
@@ -145,21 +163,33 @@ li {
   border-radius: 8px;
 }
 
-/* Titres
-h2 {
-  color: #f5a623;
-  margin-bottom: 15px;
+.content-area img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px auto;
 }
 
-h3 {
-  color: #333;
-  /* margin-top: 20px; */
+
+
+
+/* .content-area {
+  border: 1px solid red; /* temporaire */
 /* } */
 
-/* ul li { */
-  /* margin-bottom: 12px; */
-  /* line-height: 1.5; */
-/* } */ */
+
+/* 
+.side-banner {
+  border: 1px solid blue; /* temporaire */
+/* } */
+
+/* * { */
+  /* outline: 1px solid rgba(255,0,0,0.2); */
+/* } */ 
+
+html {
+  overflow-y: scroll; /* Réserve toujours la place pour la scrollbar verticale */
+}
 
 
 /* Responsive */
