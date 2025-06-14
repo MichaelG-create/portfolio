@@ -94,7 +94,7 @@ li {
 }
 
 .banner-image {
-  width: 600px;
+  /* width: 800px; */
   border-radius: 16px;
   object-fit: cover;
   display: block;
@@ -162,6 +162,18 @@ li {
   box-shadow: 0 0 10px #eee;
   border-radius: 8px;
 }
+
+
+.align-left {
+  float: left;
+  border-radius: 16px;
+  object-fit: cover;
+  display: block;
+  margin: 20px auto;
+
+  /* margin: 0 20px 20px 0; espace autour de l’image */
+}
+
 
 .content-area img {
   max-width: 100%;
