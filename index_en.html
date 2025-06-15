@@ -1,67 +1,63 @@
-<!-- fichier : index.html -->
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio - Accueil</title>
+  <title>Portfolio - Home</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script>
     function switchLang(lang) {
       const currentPath = window.location.pathname;
-      if (lang === 'en') {
-        window.location.href = currentPath.replace('.html', '_en.html');
-      } else {
+      if (lang === 'fr') {
         window.location.href = currentPath.replace('_en.html', '.html');
+      } else {
+        window.location.href = currentPath.replace('.html', '_en.html');
       }
     }
   </script>
 </head>
 <body>
 
-  <!-- Bannière horizontale jaune -->
   <header class="top-banner">
     <nav class="top-nav">
-      <a href="index.html" class="left-tab">Portfolio</a>
+      <a href="index_en.html" class="left-tab">Portfolio</a>
       <div class="right-tabs">
-        <a href="index.html">Accueil</a>
-        <a href="projets.html">Projets</a>
-        <a href="cv.html">CV</a>
-        <button onclick="switchLang('en')">🇬🇧 EN</button>
+        <a href="index_en.html">Home</a>
+        <a href="projets_en.html">Projects</a>
+        <a href="cv_en.html">Resume</a>
+        <button onclick="switchLang('fr')">🇫🇷🇨🇭 FR</button>
       </div>
     </nav>
   </header>
 
-  <!-- Bannière verticale blanche à gauche -->
   <main class="main-content">
     <aside class="side-banner">
-      <img src="./assets/images/photo.png" alt="Photo de moi" class="profile-photo" />
+      <img src="./assets/images/photo.png" alt="My photo" class="profile-photo" />
       <p class="name">Michael GARCIA - Ph.D.</p>
       <p class="desc">Data Engineer - Finance</p>
-      <p><i class="fa-solid fa-location-dot"></i>Aix-les-bains, France</p>
-      <p><i class="fa-solid fa-location-dot"></i>Genève, Suisse</p>
+      <p><i class="fa-solid fa-location-dot"></i>Aix-les-Bains, France</p>
+      <p><i class="fa-solid fa-location-dot"></i>Geneva, Switzerland</p>
       <p><i class="fa-solid fa-envelope"></i> <a href="mailto:michaelgarcia73@gmail.com">Email</a></p>
       <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/michaelgarcia838383" target="_blank" rel="noopener">LinkedIn</a></p>
       <p><i class="fab fa-github"></i> <a href="https://github.com/michaelg-create" target="_blank" rel="noopener">GitHub</a></p>
     </aside>
 
-    <!-- Contenu principal à droite -->
     <section class="content-area">
       <div class="text-block">
         <h1>Data Engineer | Data & Finance</h1>
-        <h2>Accompagnement client et intégration de données complexes</h2>
+        <h2>Client support and integration of complex data</h2>
         <ul>
-          <li><strong>Ph.D. en physique reconverti en Data Engineer</strong></li>
-          <li>Expertise métier (finance, pédagogie, projets)</li>
-          <li>Stack technique avancée (Spark, Airflow, ETL)</li>
-          <li>Données optimisées pour la performance business</li>
+          <li><strong>Ph.D. in Physics turned Data Engineer</strong></li>
+          <li>Domain expertise (finance, education, project work)</li>
+          <li>Advanced technical stack (Spark, Airflow, ETL)</li>
+          <li>Data optimized for business performance</li>
         </ul>
       </div>
       <div class="image-block">
         <img src="./assets/images/image_couverture.png" alt="Data Engineer Finance" class="align-left" width="400px"/>
       </div>
-      </section>
+    </section>
 
   </main>
 
