@@ -6,6 +6,16 @@
   <title>Portfolio - Projets</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script>
+    function switchLang(lang) {
+      const currentPath = window.location.pathname;
+      if (lang === 'en') {
+        window.location.href = currentPath.replace('.html', '_en.html');
+      } else {
+        window.location.href = currentPath.replace('_en.html', '.html');
+      }
+    }
+  </script>
 </head>
 <body>
 
@@ -16,11 +26,11 @@
         <a href="index.html">Accueil</a>
         <a href="projets.html">Projets</a>
         <a href="cv.html">CV</a>
+        <button onclick="switchLang('en')">🇬🇧 EN</button>
       </div>
     </nav>
   </header>
 
-  <!-- Bannière verticale blanche à gauche -->
   <main class="main-content">
     <aside class="side-banner">
       <img src="./assets/images/photo.png" alt="Photo de moi" class="profile-photo" />
@@ -37,12 +47,11 @@
       <h1>Projets</h1>
 
       <article>
-        <h2>Projet data engineering</h2>
-        <p>📌 <strong>Bank branch footfall</strong></p>
+        <h2>Data engineering</h2>
+        <p>📌 <strong>Suivi d’affluence en agence bancaire</strong></p>
         <p><em>Objectif :</em> Automatisation du suivi et de l’analyse du trafic en agence bancaire.</p>
         <p><em>Stack :</em> FastAPI, PySpark, Airflow, Docker, DuckDB, Streamlit</p>
         <h3>Diagramme de flux de données</h3>
-        <!-- <img src="./assets/images/data-flow-diagram.png" alt="Diagramme de flux de données" style="max-width:100%; height:auto;" /> -->
         <img src="./assets/images/data-flow-diagram.png" alt="Diagramme de flux de données" class="banner-image" width="800px" />
         <p><em>Liens :</em> 
           <a href="https://bank-branch-footfall.streamlit.app/">App live</a> | 

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portfolio - Projects</title>
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <script>
+    function switchLang(lang) {
+      const currentPath = window.location.pathname;
+      if (lang === 'fr') {
+        window.location.href = currentPath.replace('_en.html', '.html');
+      } else {
+        window.location.href = currentPath.replace('.html', '_en.html');
+      }
+    }
+  </script>
+</head>
+<body>
+
+  <header class="top-banner">
+    <nav class="top-nav">
+      <a href="index_en.html" class="left-tab">Portfolio</a>
+      <div class="right-tabs">
+        <a href="index_en.html">Home</a>
+        <a href="projets_en.html">Projects</a>
+        <a href="cv_en.html">CV</a>
+        <button onclick="switchLang('fr')">🇫🇷🇨🇭 FR</button>
+      </div>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <aside class="side-banner">
+      <img src="./assets/images/photo.png" alt="Photo of me" class="profile-photo" />
+      <p class="name">Michael GARCIA - Ph.D.</p>
+      <p class="desc">Data Engineer - Finance</p>
+      <p><i class="fa-solid fa-location-dot"></i>Aix-les-Bains, France</p>
+      <p><i class="fa-solid fa-location-dot"></i>Geneva, Switzerland</p>
+      <p><i class="fa-solid fa-envelope"></i> <a href="mailto:michaelgarcia73@gmail.com">Email</a></p>
+      <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/michaelgarcia838383" target="_blank" rel="noopener">LinkedIn</a></p>
+      <p><i class="fab fa-github"></i> <a href="https://github.com/michaelg-create" target="_blank" rel="noopener">GitHub</a></p>
+    </aside>
+
+    <section class="content-area">
+      <h1>Projects</h1>
+
+      <article>
+        <h2>Data Engineering Project</h2>
+        <p>📌 <strong>Bank branch footfall</strong></p>
+        <p><em>Goal:</em> Automate monitoring and analysis of visitor traffic in bank branches.</p>
+        <p><em>Stack:</em> FastAPI, PySpark, Airflow, Docker, DuckDB, Streamlit</p>
+        <h3>Data Flow Diagram</h3>
+        <img src="./assets/images/data-flow-diagram.png" alt="Data Flow Diagram" class="banner-image" width="800px" />
+        <p><em>Links:</em> 
+          <a href="https://bank-branch-footfall.streamlit.app/">Live App</a> | 
+          <a href="https://bank-branch-footfall.onrender.com/get_visitor_count?date_time=2025-05-29%2009:05&agency_name=Aix_les_bains_1">Live API</a> | 
+          <a href="https://github.com/michaelg-create/bank-branch-footfall">Source Code</a>
+        </p>
+      </article>
+
+      <article>
+        <h2>Side Project</h2>
+        <p>📌 <strong>SQL Spaced Repetition System</strong></p>
+        <p><em>Goal:</em> Learn (and retain!) the most useful SQL commands</p>
+        <p>with a spaced repetition system.</p>
+        <p><em>Stack:</em> Python, SQL, DuckDB, Streamlit</p>
+        <p><em>Links:</em> 
+          <a href="https://srssql.streamlit.app/">Live App</a> | 
+          <a href="https://github.com/michaelg-create/SRS_SQL">Source Code</a> 
+        </p>
+      </article>
+
+    </section>
+  </main>
+
+</body>
+</html>
