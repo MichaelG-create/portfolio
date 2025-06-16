@@ -47,24 +47,84 @@
       <h1>Projets</h1>
 
       <article>
-        <h2>Data engineering</h2>
-        <p>📌 <strong>Suivi d’affluence en agence bancaire</strong></p>
+        <h2>📌 Sectoral - Pipeline d'analyse sectorielle automatisée (<span class="nowrap">06/2025&nbsp;&ndash;&nbsp;en cours</span>)</h2>
+        <p><em>Objectif :</em> Automatisation de l'analyse des performances sectorielles des marchés financiers pour optimiser les stratégies d'investissement et détecter les opportunités de rotation sectorielle.</p>
+        <p><em>Stack :</em> Apache Airflow (MWAA), Terraform, AWS S3/Redshift, dbt Core, Python (pandas, yfinance), CloudWatch</p>
+        
+        <h3>Architecture du Pipeline</h3>
+        <div class="architecture-diagram">
+            <div style="margin-bottom: 20px; font-size: 1.1em; font-weight: bold;">Pipeline de Données Financières</div>
+            <div>
+                <span class="flow-step">APIs Financières</span>
+                <span class="arrow">→</span>
+                <span class="flow-step">Python Ingestion</span>
+                <span class="arrow">→</span>
+                <span class="flow-step">AWS S3</span>
+                <span class="arrow">→</span>
+                <span class="flow-step">dbt Transform</span>
+                <span class="arrow">→</span>
+                <span class="flow-step">Redshift</span>
+                <span class="arrow">→</span>
+                <span class="flow-step">Analytics</span>
+            </div>
+            <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                Orchestré par Apache Airflow | Infrastructure Terraform | Monitoring CloudWatch
+            </div>
+        </div>
+
+        <h3>Métriques Business Générées</h3>
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <div class="metric-value">20</div>
+                <div>Actions analysées</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">5</div>
+                <div>Secteurs couverts</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">15+</div>
+                <div>Métriques calculées</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">Daily</div>
+                <div>Fréquence d'analyse</div>
+            </div>
+        </div>
+
+        <p><em>Fonctionnalités :</em></p>
+        <ul>
+            <li><strong>Performance Analysis :</strong> Rendements sectoriels, momentum, comparaisons relatives</li>
+            <li><strong>Risk Management :</strong> Volatilité, VaR, ratios de Sharpe par secteur</li>
+            <li><strong>Correlation Analysis :</strong> Matrices inter-sectorielles, détection de régimes</li>
+            <li><strong>Business Insights :</strong> Signaux de rotation, opportunités d'allocation</li>
+        </ul>
+
+        <p><em>Infrastructure :</em> Architecture cloud native avec Infrastructure as Code (Terraform), pipeline orchestré (Airflow), monitoring complet (CloudWatch), et transformations SQL avancées (dbt).</p>
+
+        <p><em>Liens :</em> 
+          <a href="https://github.com/MichaelG-create/Sectoral">Code Source & Documentation</a> |
+          <a href="https://github.com/MichaelG-create/Sectoral/blob/master/sectoral-detailed-readme.md">README détaillé</a>  
+        </p>
+
+
+        <h2>📌 Suivi d’affluence en agence bancaire (<span class="nowrap">01/2025&nbsp;&ndash;&nbsp;03/2025</span>)</h2>
         <p><em>Objectif :</em> Automatisation du suivi et de l’analyse du trafic en agence bancaire.</p>
         <p><em>Stack :</em> FastAPI, PySpark, Airflow, Docker, DuckDB, Streamlit</p>
-        <h3>Diagramme de flux de données</h3>
+        <p><em>Diagramme de flux de données : </em></p>
         <img src="./assets/images/data-flow-diagram.png" alt="Diagramme de flux de données" class="banner-image" width="800px" />
         <p><em>Liens :</em> 
           <a href="https://bank-branch-footfall.streamlit.app/">App live</a> | 
           <a href="https://bank-branch-footfall.onrender.com/get_visitor_count?date_time=2025-05-29%2009:05&agency_name=Aix_les_bains_1">API live</a> | 
           <a href="https://github.com/michaelg-create/bank-branch-footfall">Code Source</a>
         </p>
+
       </article>
 
       <article>
         <h2>Projet annexe</h2>
-        <p>📌 <strong>SQL Spaced Repetition System</strong></p>
-        <p><em>Objectif :</em> Apprendre (et retenir !) les commandes utiles en SQL</p>
-        <p>avec un système de répétitions espacées dans le temps.</p>
+        <h3>📌 SQL Spaced Repetition System</h3>
+        <p><em>Objectif :</em> Apprendre (et retenir !) les commandes utiles en SQL avec un système de répétitions espacées dans le temps.</p>
         <p><em>Stack :</em> Python, SQL, DuckDB, Streamlit</p>
         <p><em>Liens :</em> 
           <a href="https://srssql.streamlit.app/">App live</a> | 

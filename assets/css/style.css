@@ -17,11 +17,16 @@ h1 {
 h2 {
   font-size: 1.75rem; /* ~28px */
   margin-bottom: 0.8rem;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 10px;
 }
 
 h3 {
   font-size: 1.375rem; /* ~22px */
   margin-bottom: 0.6rem;
+  color: #34495e;
+  margin-top: 25px;
 }
 
 /* PARAGRAPHS */
@@ -33,6 +38,13 @@ p {
 /* STRONG (bold text) */
 strong {
   font-weight: bold;
+  color: #2c3e50;
+}
+
+/* EMPHASIS */
+em {
+  color: #7f8c8d;
+  font-weight: 500;
 }
 
 /* LISTS */
@@ -46,6 +58,16 @@ li {
   line-height: 1.5;
 }
 
+/* LINKS */
+a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 /* SPACING HELPERS */
 .mt-2 { margin-top: 0.5rem; }
 .mt-4 { margin-top: 1rem; }
@@ -54,7 +76,6 @@ li {
 .mb-2 { margin-bottom: 0.5rem; }
 .mb-4 { margin-bottom: 1rem; }
 .mb-6 { margin-bottom: 1.5rem; }
-
 
 /* Bannière jaune horizontale */
 .top-banner {
@@ -84,9 +105,7 @@ li {
   border-radius: 4px;
 }
 
-
 /* Bannière verticale à gauche */
-
 .profile-photo {
   width: 150px;
   border-radius: 50%;
@@ -94,18 +113,20 @@ li {
 }
 
 .banner-image {
-  /* width: 800px; */
   border-radius: 16px;
   object-fit: cover;
   display: block;
   margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .name {
   font-weight: 600;
   text-align: center;
   font-size: 1.1em;
-  /* margin-bottom: 0; /*Supprime l'espace par défaut */
   margin: 0 0 0.2em 0; /* top right bottom left */
 }
 
@@ -114,7 +135,6 @@ li {
   text-align: center;
   font-size: 1.1em;
 }
-
 
 .side-banner p:not(.name):not(.desc) {
   margin: 5px 0;
@@ -155,7 +175,6 @@ li {
 
 .content-area {
   width: 75%;
-  /* max-width: 900px; AJOUTEZ JUSTE CETTE LIGNE */
   background: #fafafa;
   padding: 20px;
   box-sizing: border-box;
@@ -163,17 +182,13 @@ li {
   border-radius: 8px;
 }
 
-
 .align-left {
   float: left;
   border-radius: 16px;
   object-fit: cover;
   display: block;
   margin: 20px auto;
-
-  /* margin: 0 20px 20px 0; espace autour de l’image */
 }
-
 
 .content-area img {
   max-width: 100%;
@@ -182,22 +197,55 @@ li {
   margin: 20px auto;
 }
 
+/* SECTORAL PROJECT SPECIFIC STYLES */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+}
 
+.metric-item {
+  text-align: center;
+  padding: 10px;
+}
 
+.metric-value {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #27ae60;
+}
 
-/* .content-area {
-  border: 1px solid red; /* temporaire */
-/* } */
+.architecture-diagram {
+  background: linear-gradient(135deg, #f5a623 0%, #e8941a 100%);
+  color: white;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  margin: 25px 0;
+  font-family: 'Courier New', monospace;
+}
 
+.flow-step {
+  display: inline-block;
+  margin: 5px 10px;
+  padding: 8px 15px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 20px;
+  font-size: 0.9em;
+}
 
-/* 
-.side-banner {
-  border: 1px solid blue; /* temporaire */
-/* } */
+.arrow {
+  font-size: 1.2em;
+  margin: 0 10px;
+}
 
-/* * { */
-  /* outline: 1px solid rgba(255,0,0,0.2); */
-/* } */ 
+.nowrap {
+  white-space: nowrap;
+}
 
 html {
   overflow-y: scroll; /* Réserve toujours la place pour la scrollbar verticale */

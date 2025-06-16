@@ -25,7 +25,7 @@
       <div class="right-tabs">
         <a href="index_en.html">Home</a>
         <a href="projets_en.html">Projects</a>
-        <a href="cv_en.html">CV</a>
+        <a href="cv_en.html">Resume</a>
         <button onclick="switchLang('fr')">🇫🇷🇨🇭 FR</button>
       </div>
     </nav>
@@ -47,8 +47,68 @@
       <h1>Projects</h1>
 
       <article>
-        <h2>Data Engineering Project</h2>
-        <p>📌 <strong>Bank branch footfall</strong></p>
+      
+        <h2>📌 Sectoral - Automated Sectoral Analysis Pipeline (<span class="nowrap">06/2025&nbsp;&ndash;&nbsp;ongoing</span>)</h2>
+        <p><em>Objective:</em> Automation of financial market sectoral performance analysis to optimize investment strategies and detect sector rotation opportunities.</p>
+        <p><em>Stack:</em> Apache Airflow (MWAA), Terraform, AWS S3/Redshift, dbt Core, Python (pandas, yfinance), CloudWatch</p>
+        
+        <h3>Pipeline Architecture</h3>
+        <div class="architecture-diagram">
+            <div style="margin-bottom: 20px; font-size: 1.1em; font-weight: bold;">Financial Data Pipeline</div>
+            <div>
+                <span class="flow-step">Financial APIs</span>
+                <span class="arrow">→</span>
+                <span class="flow-step">Python Ingestion</span>
+                <span class="arrow">→</span>
+                <span class="flow-step">AWS S3</span>
+                <span class="arrow">→</span>
+                <span class="flow-step">dbt Transform</span>
+                <span class="arrow">→</span>
+                <span class="flow-step">Redshift</span>
+                <span class="arrow">→</span>
+                <span class="flow-step">Analytics</span>
+            </div>
+            <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                Orchestrated by Apache Airflow | Terraform Infrastructure | CloudWatch Monitoring
+            </div>
+        </div>
+
+        <h3>Business Metrics Generated</h3>
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <div class="metric-value">20</div>
+                <div>Stocks analyzed</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">5</div>
+                <div>Sectors covered</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">15+</div>
+                <div>Metrics calculated</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">Daily</div>
+                <div>Analysis frequency</div>
+            </div>
+        </div>
+
+        <p><em>Features:</em></p>
+        <ul>
+            <li><strong>Performance Analysis:</strong> Sectoral returns, momentum, relative comparisons</li>
+            <li><strong>Risk Management:</strong> Volatility, VaR, Sharpe ratios by sector</li>
+            <li><strong>Correlation Analysis:</strong> Inter-sectoral matrices, regime detection</li>
+            <li><strong>Business Insights:</strong> Rotation signals, allocation opportunities</li>
+        </ul>
+
+        <p><em>Infrastructure:</em> Cloud-native architecture with Infrastructure as Code (Terraform), orchestrated pipeline (Airflow), comprehensive monitoring (CloudWatch), and advanced SQL transformations (dbt).</p>
+
+        <p><em>Links:</em> 
+          <a href="#sectoral-github">Source Code & Documentation</a> | 
+          <a href="#sectoral-readme">Detailed README</a>
+        </p>
+
+        <h2>📌 Bank branch footfall (<span class="nowrap">01/2025&nbsp;&ndash;&nbsp;03/2025</span>)</h2>
         <p><em>Goal:</em> Automate monitoring and analysis of visitor traffic in bank branches.</p>
         <p><em>Stack:</em> FastAPI, PySpark, Airflow, Docker, DuckDB, Streamlit</p>
         <h3>Data Flow Diagram</h3>
@@ -62,9 +122,8 @@
 
       <article>
         <h2>Side Project</h2>
-        <p>📌 <strong>SQL Spaced Repetition System</strong></p>
-        <p><em>Goal:</em> Learn (and retain!) the most useful SQL commands</p>
-        <p>with a spaced repetition system.</p>
+        <h3>📌 SQL Spaced Repetition System</h3>
+        <p><em>Goal:</em> Learn (and retain!) the most useful SQL commands with a spaced repetition system.</p>
         <p><em>Stack:</em> Python, SQL, DuckDB, Streamlit</p>
         <p><em>Links:</em> 
           <a href="https://srssql.streamlit.app/">Live App</a> | 
