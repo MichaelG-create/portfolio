@@ -9,11 +9,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script>
     function switchLang(lang) {
-      const currentPath = window.location.pathname;
-      if (lang === 'en') {
-        window.location.href = currentPath.replace('.html', '_en.html');
+      let currentPath = window.location.pathname;
+
+      // Si on est sur la racine ("/") ou que l'URL ne contient pas ".html"
+      if (!currentPath.includes('.html')) {
+        if (lang === 'en') {
+          window.location.href = currentPath + 'index_en.html';
+        } else {
+          window.location.href = currentPath + 'index.html';
+        }
       } else {
-        window.location.href = currentPath.replace('_en.html', '.html');
+        if (lang === 'en') {
+          window.location.href = currentPath.replace('.html', '_en.html');
+        } else {
+          window.location.href = currentPath.replace('_en.html', '.html');
+        }
       }
     }
   </script>
