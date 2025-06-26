@@ -75,6 +75,6 @@ Ce portfolio me permet de centraliser :
 
 ## 🚀 Déploiement
 
-Ce site est déployé via [GitHub Pages](https://pages.github.com/) à partir de la branche `main`.
+Ce site est déployé via GitHub Pages à partir de la branche `main`.
 
 ---
