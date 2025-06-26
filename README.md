@@ -10,10 +10,6 @@ Bienvenue sur mon portfolio personnel, conçu pour présenter mes projets en dat
 
 ### 🔧 Stack technique
 - **Frontend :** HTML, CSS, Font Awesome
-- **Visualisation :** [Streamlit](https://streamlit.io/)
-- **Backend/API :** FastAPI
-- **ETL & Traitement :** Python, PySpark, Airflow, DuckDB
-- **Conteneurisation :** Docker
 
 ### 💼 Contenu du portfolio
 - `index.html` : Page d'accueil (profil, résumé)
@@ -29,10 +25,6 @@ Welcome to my personal portfolio. I'm a data engineer with a scientific backgrou
 
 ### 🔧 Tech stack
 - **Frontend:** HTML, CSS, Font Awesome
-- **Visualization:** Streamlit
-- **Backend/API:** FastAPI
-- **ETL & Processing:** Python, PySpark, Airflow, DuckDB
-- **Containers:** Docker
 
 ### 💼 Portfolio contents
 - `index.html`: Homepage (profile summary)
@@ -69,7 +61,7 @@ Welcome to my personal portfolio. I'm a data engineer with a scientific backgrou
 Ce portfolio me permet de centraliser :
 - Mon parcours académique et professionnel
 - Mes projets data en production (API, pipeline, visualisation)
-- Une présentation bilingue pour des recruteurs en France ou en Suisse
+- Une présentation bilingue pour des recruteurs en Suisse ou en France
 
 ---
 
