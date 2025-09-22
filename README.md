@@ -1,4 +1,4 @@
-# 🧠 Michael Garcia – Portfolio (Data Engineering)
+# 🧠 Michael Garcia – Portfolio (Sys Admin)
 
 > 🌍 Site en ligne : [michaelg-create.github.io/portfolio/](https://michaelg-create.github.io/portfolio/)
 
@@ -6,7 +6,7 @@
 
 ## 🇫🇷 Présentation
 
-Bienvenue sur mon portfolio personnel, conçu pour présenter mes projets en data engineering, ma formation et mon parcours professionnel.
+Bienvenue sur mon portfolio personnel, conçu pour présenter mes projets en administration système , data engineering, ma formation et mon parcours professionnel.
 
 ### 🔧 Stack technique
 - **Frontend :** HTML, CSS, Font Awesome
@@ -21,7 +21,7 @@ Bienvenue sur mon portfolio personnel, conçu pour présenter mes projets en dat
 
 ## 🇬🇧 Overview
 
-Welcome to my personal portfolio. I'm a data engineer with a scientific background (PhD), showcasing key projects and professional experience in data and finance.
+Welcome to my personal portfolio. I'm a system administrator with a scientific background (PhD), showcasing key projects and professional experience in data and finance.
 
 ### 🔧 Tech stack
 - **Frontend:** HTML, CSS, Font Awesome
