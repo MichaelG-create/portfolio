@@ -1,18 +1,27 @@
+<!-- fichier : index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio - Projects</title>
+  <title>Portfolio - Accueil</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script>
     function switchLang(lang) {
-      const currentPath = window.location.pathname;
-      if (lang === 'fr') {
-        window.location.href = currentPath.replace('_en.html', '.html');
+      let currentPath = window.location.pathname;
+      if (!currentPath.includes('.html')) {
+        if (lang === 'en') {
+          window.location.href = currentPath + 'index_en.html';
+        } else {
+          window.location.href = currentPath + 'index.html';
+        }
       } else {
-        window.location.href = currentPath.replace('.html', '_en.html');
+        if (lang === 'en') {
+          window.location.href = currentPath.replace('.html', '_en.html');
+        } else {
+          window.location.href = currentPath.replace('_en.html', '.html');
+        }
       }
     }
   </script>
@@ -21,117 +30,45 @@
 
   <header class="top-banner">
     <nav class="top-nav">
-      <a href="index_en.html" class="left-tab">Portfolio</a>
+      <a href="index.html" class="left-tab">Portfolio</a>
       <div class="right-tabs">
-        <a href="index_en.html">Home</a>
-        <a href="projets_en.html">Projects</a>
-        <a href="cv_en.html">Resume</a>
-        <button onclick="switchLang('fr')">🇫🇷🇨🇭 FR</button>
+        <a href="index.html">Accueil</a>
+        <a href="projets.html">Projets</a>
+        <a href="cv.html">CV</a>
+        <button onclick="switchLang('en')">🇬🇧 EN</button>
       </div>
     </nav>
   </header>
 
   <main class="main-content">
     <aside class="side-banner">
-      <img src="./assets/images/photo.png" alt="Photo of me" class="profile-photo" />
+      <img src="./assets/images/photo.png" alt="Photo de moi" class="profile-photo" />
       <p class="name">Michael GARCIA - Ph.D.</p>
-      <p class="desc">Data Engineer - Finance</p>
+      <p class="desc">Full-Stack Software Engineer</p>
       <p><i class="fa-solid fa-location-dot"></i>Aix-les-Bains, France</p>
-      <p><i class="fa-solid fa-location-dot"></i>Geneva, Switzerland</p>
-      <p><i class="fa-solid fa-envelope"></i> <a href="mailto:michaelgarcia73@gmail.com">Email</a></p>
+      <p><i class="fa-solid fa-location-dot"></i>Genève, Suisse</p>
+      <p><i class="fa-solid fa-envelope"></i> <a href="mailto:michael.garcia.73@gmail.com">Email</a></p>
       <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/michaelgarcia838383" target="_blank" rel="noopener">LinkedIn</a></p>
       <p><i class="fab fa-github"></i> <a href="https://github.com/michaelg-create" target="_blank" rel="noopener">GitHub</a></p>
     </aside>
 
     <section class="content-area">
-      <h1>Projects</h1>
-
-      <article>
-      
-        <h2>📌 Sectoral - Automated Sectoral Analysis Pipeline (<span class="nowrap">06/2025&nbsp;&ndash;&nbsp;ongoing</span>)</h2>
-        <p><em>Objective:</em> Automation of financial market sectoral performance analysis to optimize investment strategies and detect sector rotation opportunities.</p>
-        <p><em>Stack:</em> Apache Airflow (MWAA), Terraform, AWS S3/Redshift, dbt Core, Python (pandas, yfinance), CloudWatch</p>
-        
-        <h3>Pipeline Architecture</h3>
-        <div class="architecture-diagram">
-            <div style="margin-bottom: 20px; font-size: 1.1em; font-weight: bold;">Financial Data Pipeline</div>
-            <div>
-                <span class="flow-step">Financial APIs</span>
-                <span class="arrow">→</span>
-                <span class="flow-step">Python Ingestion</span>
-                <span class="arrow">→</span>
-                <span class="flow-step">AWS S3</span>
-                <span class="arrow">→</span>
-                <span class="flow-step">dbt Transform</span>
-                <span class="arrow">→</span>
-                <span class="flow-step">Redshift</span>
-                <span class="arrow">→</span>
-                <span class="flow-step">Analytics</span>
-            </div>
-            <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
-                Orchestrated by Apache Airflow | Terraform Infrastructure | CloudWatch Monitoring
-            </div>
-        </div>
-
-        <h3>Business Metrics Generated</h3>
-        <div class="metrics-grid">
-            <div class="metric-item">
-                <div class="metric-value">20</div>
-                <div>Stocks analyzed</div>
-            </div>
-            <div class="metric-item">
-                <div class="metric-value">5</div>
-                <div>Sectors covered</div>
-            </div>
-            <div class="metric-item">
-                <div class="metric-value">15+</div>
-                <div>Metrics calculated</div>
-            </div>
-            <div class="metric-item">
-                <div class="metric-value">Daily</div>
-                <div>Analysis frequency</div>
-            </div>
-        </div>
-
-        <p><em>Features:</em></p>
+      <div class="text-block">
+        <h1>Software Engineer | Full-Stack Development & Data Infrastructure</h1>
+        <h2>Production systems, modern practices, scientific rigor</h2>
         <ul>
-            <li><strong>Performance Analysis:</strong> Sectoral returns, momentum, relative comparisons</li>
-            <li><strong>Risk Management:</strong> Volatility, VaR, Sharpe ratios by sector</li>
-            <li><strong>Correlation Analysis:</strong> Inter-sectoral matrices, regime detection</li>
-            <li><strong>Business Insights:</strong> Rotation signals, allocation opportunities</li>
+          <li><strong>Ph.D. Physicist reconverti en Software Engineer</strong></li>
+          <li>Backend (Python, learning Java/Spring) & Frontend (learning React/TypeScript)</li>
+          <li>DevOps & Cloud (Docker, Kubernetes, AWS, CI/CD)</li>
+          <li>Production-ready systems with automated testing & monitoring</li>
+          <li>International collaboration & agile methodologies</li>
         </ul>
-
-        <p><em>Infrastructure:</em> Cloud-native architecture with Infrastructure as Code (Terraform), orchestrated pipeline (Airflow), comprehensive monitoring (CloudWatch), and advanced SQL transformations (dbt).</p>
-
-        <p><em>Links:</em> 
-          <a href="https://github.com/MichaelG-create/Sectoral">Source Code & Documentation</a> | 
-          <a href="https://github.com/MichaelG-create/Sectoral/blob/master/sectoral-detailed-readme.md">Detailed README</a>
-        </p>
-
-        <h2>📌 Bank branch footfall (<span class="nowrap">01/2025&nbsp;&ndash;&nbsp;03/2025</span>)</h2>
-        <p><em>Goal:</em> Automate monitoring and analysis of visitor traffic in bank branches.</p>
-        <p><em>Stack:</em> FastAPI, PySpark, Airflow, Docker, DuckDB, Streamlit</p>
-        <h3>Data Flow Diagram</h3>
-        <img src="./assets/images/data-flow-diagram.png" alt="Data Flow Diagram" class="banner-image" width="800px" />
-        <p><em>Links:</em> 
-          <a href="https://bank-branch-footfall.streamlit.app/">Live App</a> | 
-          <a href="https://bank-branch-footfall.onrender.com/get_visitor_count?date_time=2025-05-29%2009:05&agency_name=Aix_les_bains_1">Live API</a> | 
-          <a href="https://github.com/michaelg-create/bank-branch-footfall">Source Code</a>
-        </p>
-      </article>
-
-      <article>
-        <h2>Side Project</h2>
-        <h3>📌 SQL Spaced Repetition System</h3>
-        <p><em>Goal:</em> Learn (and retain!) the most useful SQL commands with a spaced repetition system.</p>
-        <p><em>Stack:</em> Python, SQL, DuckDB, Streamlit</p>
-        <p><em>Links:</em> 
-          <a href="https://srssql.streamlit.app/">Live App</a> | 
-          <a href="https://github.com/michaelg-create/SRS_SQL">Source Code</a> 
-        </p>
-      </article>
-
+      </div>
+      <div class="image-block">
+        <img src="./assets/images/image_couverture.png" alt="Software Engineer" class="align-left" width="400px"/>
+      </div>
     </section>
+
   </main>
 
 </body>

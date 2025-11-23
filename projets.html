@@ -1,18 +1,27 @@
+<!-- fichier : index.html -->
 <!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio - Projets</title>
+  <title>Portfolio - Accueil</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script>
     function switchLang(lang) {
-      const currentPath = window.location.pathname;
-      if (lang === 'en') {
-        window.location.href = currentPath.replace('.html', '_en.html');
+      let currentPath = window.location.pathname;
+      if (!currentPath.includes('.html')) {
+        if (lang === 'en') {
+          window.location.href = currentPath + 'index_en.html';
+        } else {
+          window.location.href = currentPath + 'index.html';
+        }
       } else {
-        window.location.href = currentPath.replace('_en.html', '.html');
+        if (lang === 'en') {
+          window.location.href = currentPath.replace('.html', '_en.html');
+        } else {
+          window.location.href = currentPath.replace('_en.html', '.html');
+        }
       }
     }
   </script>
@@ -35,104 +44,31 @@
     <aside class="side-banner">
       <img src="./assets/images/photo.png" alt="Photo de moi" class="profile-photo" />
       <p class="name">Michael GARCIA - Ph.D.</p>
-      <p class="desc">Data Engineer - Finance</p>
-      <p><i class="fa-solid fa-location-dot"></i>Aix-les-bains, France</p>
+      <p class="desc">Full-Stack Software Engineer</p>
+      <p><i class="fa-solid fa-location-dot"></i>Aix-les-Bains, France</p>
       <p><i class="fa-solid fa-location-dot"></i>Genève, Suisse</p>
-      <p><i class="fa-solid fa-envelope"></i> <a href="mailto:michaelgarcia73@gmail.com">Email</a></p>
+      <p><i class="fa-solid fa-envelope"></i> <a href="mailto:michael.garcia.73@gmail.com">Email</a></p>
       <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/michaelgarcia838383" target="_blank" rel="noopener">LinkedIn</a></p>
       <p><i class="fab fa-github"></i> <a href="https://github.com/michaelg-create" target="_blank" rel="noopener">GitHub</a></p>
     </aside>
 
     <section class="content-area">
-      <h1>Projets</h1>
-
-      <article>
-        <h2>📌 Sectoral - Pipeline d'analyse sectorielle automatisée (<span class="nowrap">06/2025&nbsp;&ndash;&nbsp;en cours</span>)</h2>
-        <p><em>Objectif :</em> Automatisation de l'analyse des performances sectorielles des marchés financiers pour optimiser les stratégies d'investissement et détecter les opportunités de rotation sectorielle.</p>
-        <p><em>Stack :</em> Apache Airflow (MWAA), Terraform, AWS S3/Redshift, dbt Core, Python (pandas, yfinance), CloudWatch</p>
-        
-        <h3>Architecture du Pipeline</h3>
-        <div class="architecture-diagram">
-            <div style="margin-bottom: 20px; font-size: 1.1em; font-weight: bold;">Pipeline de Données Financières</div>
-            <div>
-                <span class="flow-step">APIs Financières</span>
-                <span class="arrow">→</span>
-                <span class="flow-step">Python Ingestion</span>
-                <span class="arrow">→</span>
-                <span class="flow-step">AWS S3</span>
-                <span class="arrow">→</span>
-                <span class="flow-step">dbt Transform</span>
-                <span class="arrow">→</span>
-                <span class="flow-step">Redshift</span>
-                <span class="arrow">→</span>
-                <span class="flow-step">Analytics</span>
-            </div>
-            <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
-                Orchestré par Apache Airflow | Infrastructure Terraform | Monitoring CloudWatch
-            </div>
-        </div>
-
-        <h3>Métriques Business Générées</h3>
-        <div class="metrics-grid">
-            <div class="metric-item">
-                <div class="metric-value">20</div>
-                <div>Actions analysées</div>
-            </div>
-            <div class="metric-item">
-                <div class="metric-value">5</div>
-                <div>Secteurs couverts</div>
-            </div>
-            <div class="metric-item">
-                <div class="metric-value">15+</div>
-                <div>Métriques calculées</div>
-            </div>
-            <div class="metric-item">
-                <div class="metric-value">Daily</div>
-                <div>Fréquence d'analyse</div>
-            </div>
-        </div>
-
-        <p><em>Fonctionnalités :</em></p>
+      <div class="text-block">
+        <h1>Software Engineer | Full-Stack Development & Data Infrastructure</h1>
+        <h2>Production systems, modern practices, scientific rigor</h2>
         <ul>
-            <li><strong>Performance Analysis :</strong> Rendements sectoriels, momentum, comparaisons relatives</li>
-            <li><strong>Risk Management :</strong> Volatilité, VaR, ratios de Sharpe par secteur</li>
-            <li><strong>Correlation Analysis :</strong> Matrices inter-sectorielles, détection de régimes</li>
-            <li><strong>Business Insights :</strong> Signaux de rotation, opportunités d'allocation</li>
+          <li><strong>Ph.D. Physicist reconverti en Software Engineer</strong></li>
+          <li>Backend (Python, learning Java/Spring) & Frontend (learning React/TypeScript)</li>
+          <li>DevOps & Cloud (Docker, Kubernetes, AWS, CI/CD)</li>
+          <li>Production-ready systems with automated testing & monitoring</li>
+          <li>International collaboration & agile methodologies</li>
         </ul>
-
-        <p><em>Infrastructure :</em> Architecture cloud native avec Infrastructure as Code (Terraform), pipeline orchestré (Airflow), monitoring complet (CloudWatch), et transformations SQL avancées (dbt).</p>
-
-        <p><em>Liens :</em> 
-          <a href="https://github.com/MichaelG-create/Sectoral">Code Source & Documentation</a> |
-          <a href="https://github.com/MichaelG-create/Sectoral/blob/master/sectoral-detailed-readme.md">README détaillé</a>  
-        </p>
-
-
-        <h2>📌 Suivi d’affluence en agence bancaire (<span class="nowrap">01/2025&nbsp;&ndash;&nbsp;03/2025</span>)</h2>
-        <p><em>Objectif :</em> Automatisation du suivi et de l’analyse du trafic en agence bancaire.</p>
-        <p><em>Stack :</em> FastAPI, PySpark, Airflow, Docker, DuckDB, Streamlit</p>
-        <p><em>Diagramme de flux de données : </em></p>
-        <img src="./assets/images/data-flow-diagram.png" alt="Diagramme de flux de données" class="banner-image" width="800px" />
-        <p><em>Liens :</em> 
-          <a href="https://bank-branch-footfall.streamlit.app/">App live</a> | 
-          <a href="https://bank-branch-footfall.onrender.com/get_visitor_count?date_time=2025-05-29%2009:05&agency_name=Aix_les_bains_1">API live</a> | 
-          <a href="https://github.com/michaelg-create/bank-branch-footfall">Code Source</a>
-        </p>
-
-      </article>
-
-      <article>
-        <h2>Projet annexe</h2>
-        <h3>📌 SQL Spaced Repetition System</h3>
-        <p><em>Objectif :</em> Apprendre (et retenir !) les commandes utiles en SQL avec un système de répétitions espacées dans le temps.</p>
-        <p><em>Stack :</em> Python, SQL, DuckDB, Streamlit</p>
-        <p><em>Liens :</em> 
-          <a href="https://srssql.streamlit.app/">App live</a> | 
-          <a href="https://github.com/michaelg-create/SRS_SQL">Code Source</a> 
-        </p>
-      </article>
-
+      </div>
+      <div class="image-block">
+        <img src="./assets/images/image_couverture.png" alt="Software Engineer" class="align-left" width="400px"/>
+      </div>
     </section>
+
   </main>
 
 </body>
