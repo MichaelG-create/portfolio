@@ -1,4 +1,4 @@
-# 🧠 Michael Garcia – Portfolio (Data Engineering)
+# 🧠 Michael Garcia – Portfolio (Software Engineering)
 
 > 🌍 Site en ligne : [michaelg-create.github.io/portfolio/](https://michaelg-create.github.io/portfolio/)
 
@@ -6,7 +6,10 @@
 
 ## 🇫🇷 Présentation
 
-Bienvenue sur mon portfolio personnel, conçu pour présenter mes projets en data engineering, ma formation et mon parcours professionnel.
+Bienvenue sur mon portfolio personnel, conçu pour présenter mes projets en software engineering, ma formation et mon parcours professionnel.
+
+### 👨‍💻 Profil
+PhD Physicist reconverti en Full-Stack Software Engineer, spécialisé dans le développement de systèmes de production avec des pratiques DevOps modernes et une rigueur scientifique.
 
 ### 🔧 Stack technique
 - **Frontend :** HTML, CSS, JavaScript, Font Awesome
@@ -24,7 +27,10 @@ Bienvenue sur mon portfolio personnel, conçu pour présenter mes projets en dat
 
 ## 🇬🇧 Overview
 
-Welcome to my personal portfolio. I'm a data engineer with a scientific background (PhD), showcasing key projects and professional experience in data and finance.
+Welcome to my personal portfolio. I'm a Full-Stack Software Engineer with a scientific background (PhD in Physics), showcasing production-ready systems and modern software engineering practices.
+
+### 👨‍💻 Profile
+PhD Physicist turned Full-Stack Software Engineer, specialized in building production systems with modern DevOps practices and scientific rigor.
 
 ### 🔧 Tech stack
 - **Frontend:** HTML, CSS, JavaScript, Font Awesome
