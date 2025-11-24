@@ -35,7 +35,7 @@
         <a href="index.html">Accueil</a>
         <a href="projets.html">Projets</a>
         <a href="cv.html">CV</a>
-        <button onclick="switchLang('en')">🇬🇧 EN</button>
+        <!-- <button onclick="switchLang('en')">🇬🇧 EN</button> -->
       </div>
     </nav>
   </header>
@@ -44,24 +44,69 @@
     <aside class="side-banner">
       <img src="./assets/images/photo.png" alt="Photo de moi" class="profile-photo" />
       <p class="name">Michael GARCIA - Ph.D.</p>
-      <p class="desc">Full-Stack Software Engineer</p>
-      <p><i class="fa-solid fa-location-dot"></i>Aix-les-Bains, France</p>
+      <p class="desc">Data Engineer - Finance</p>
+      <p><i class="fa-solid fa-location-dot"></i>Aix-les-bains, France</p>
       <p><i class="fa-solid fa-location-dot"></i>Genève, Suisse</p>
-      <p><i class="fa-solid fa-envelope"></i> <a href="mailto:michael.garcia.73@gmail.com">Email</a></p>
+      <p><i class="fa-solid fa-envelope"></i> <a href="mailto:michaelgarcia73@gmail.com">Email</a></p>
       <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/michaelgarcia838383" target="_blank" rel="noopener">LinkedIn</a></p>
       <p><i class="fab fa-github"></i> <a href="https://github.com/michaelg-create" target="_blank" rel="noopener">GitHub</a></p>
     </aside>
 
     <section class="content-area">
-      <div class="text-block">
-        <h1>Software Engineer | Full-Stack Development & Data Infrastructure</h1>
-        <h2>Production systems, modern practices, scientific rigor</h2>
+      <h1>Projets</h1>
+
+      <article>
+        <h2>📌 Sectoral - Pipeline d'analyse sectorielle automatisée (<span class="nowrap">06/2025&nbsp;&ndash;&nbsp;en cours</span>)</h2>
+        <p><em>Objectif :</em> Automatisation de l'analyse des performances sectorielles des marchés financiers pour optimiser les stratégies d'investissement et détecter les opportunités de rotation sectorielle.</p>
+        <p><em>Stack :</em> Apache Airflow (MWAA), Terraform, AWS S3/Redshift, dbt Core, Python (pandas, yfinance), CloudWatch</p>
+        
+        <h3>Architecture du Pipeline</h3>
+        <div class="architecture-diagram">
+            <div style="margin-bottom: 20px; font-size: 1.1em; font-weight: bold;">Pipeline de Données Financières</div>
+            <div>
+                <span class="flow-step">APIs Financières</span>
+                <span class="arrow">→</span>
+                <span class="flow-step">Python Ingestion</span>
+                <span class="arrow">→</span>
+                <span class="flow-step">AWS S3</span>
+                <span class="arrow">→</span>
+                <span class="flow-step">dbt Transform</span>
+                <span class="arrow">→</span>
+                <span class="flow-step">Redshift</span>
+                <span class="arrow">→</span>
+                <span class="flow-step">Analytics</span>
+            </div>
+            <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+                Orchestré par Apache Airflow | Infrastructure Terraform | Monitoring CloudWatch
+            </div>
+        </div>
+
+        <h3>Métriques Business Générées</h3>
+        <div class="metrics-grid">
+            <div class="metric-item">
+                <div class="metric-value">20</div>
+                <div>Actions analysées</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">5</div>
+                <div>Secteurs couverts</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">15+</div>
+                <div>Métriques calculées</div>
+            </div>
+            <div class="metric-item">
+                <div class="metric-value">Daily</div>
+                <div>Fréquence d'analyse</div>
+            </div>
+        </div>
+
+        <p><em>Fonctionnalités :</em></p>
         <ul>
-          <li><strong>Ph.D. Physicist reconverti en Software Engineer</strong></li>
-          <li>Backend (Python, learning Java/Spring) & Frontend (learning React/TypeScript)</li>
-          <li>DevOps & Cloud (Docker, Kubernetes, AWS, CI/CD)</li>
-          <li>Production-ready systems with automated testing & monitoring</li>
-          <li>International collaboration & agile methodologies</li>
+            <li><strong>Performance Analysis :</strong> Rendements sectoriels, momentum, comparaisons relatives</li>
+            <li><strong>Risk Management :</strong> Volatilité, VaR, ratios de Sharpe par secteur</li>
+            <li><strong>Correlation Analysis :</strong> Matrices inter-sectorielles, détection de régimes</li>
+            <li><strong>Business Insights :</strong> Signaux de rotation, opportunités d'allocation</li>
         </ul>
       </div>
       <div class="image-block">
