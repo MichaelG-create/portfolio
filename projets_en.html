@@ -1,18 +1,27 @@
+<!-- fichier : index.html -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio - Projects</title>
+  <title>Portfolio - Accueil</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <script>
     function switchLang(lang) {
-      const currentPath = window.location.pathname;
-      if (lang === 'fr') {
-        window.location.href = currentPath.replace('_en.html', '.html');
+      let currentPath = window.location.pathname;
+      if (!currentPath.includes('.html')) {
+        if (lang === 'en') {
+          window.location.href = currentPath + 'index_en.html';
+        } else {
+          window.location.href = currentPath + 'index.html';
+        }
       } else {
-        window.location.href = currentPath.replace('.html', '_en.html');
+        if (lang === 'en') {
+          window.location.href = currentPath.replace('.html', '_en.html');
+        } else {
+          window.location.href = currentPath.replace('_en.html', '.html');
+        }
       }
     }
   </script>
@@ -115,6 +124,7 @@
       </article>
 
     </section>
+
   </main>
 
     <script src="./assets/js/inject_components.js"></script>

@@ -1,72 +1,94 @@
-# 🧠 Michael Garcia – Portfolio (Sys Admin)
+# 🧠 Michael Garcia – Portfolio (Data Engineering & Systems)
 
-> 🌍 Site en ligne : [michaelg-create.github.io/portfolio/](https://michaelg-create.github.io/portfolio/)
-
----
-
-## 🇫🇷 Présentation
-
-Bienvenue sur mon portfolio personnel, conçu pour présenter mes projets en administration système , data engineering, ma formation et mon parcours professionnel.
-
-### 🔧 Stack technique
-- **Frontend :** HTML, CSS, Font Awesome
-
-### 💼 Contenu du portfolio
-- `index.html` : Page d'accueil (profil, résumé)
-- `projets.html` : Projets (détaillés avec liens vers apps, API, code)
-- `cv.html` : Curriculum Vitae (version PDF embarquée)
-- Pages traduites en anglais : `_en.html`
+> 🌍 Live Site: [michaelg-create.github.io/portfolio/](https://michaelg-create.github.io/portfolio/)
 
 ---
 
 ## 🇬🇧 Overview
 
-Welcome to my personal portfolio. I'm a system administrator with a scientific background (PhD), showcasing key projects and professional experience in data and finance.
+Welcome to my personal portfolio, designed to showcase my expertise in **Data Engineering**, system architecture, and modern DevOps practices, underpinned by strong scientific rigor.
 
-### 🔧 Tech stack
-- **Frontend:** HTML, CSS, Font Awesome
+### 👨‍💻 Profile
+**PhD Physicist turned Data Engineer**, specialized in building robust, reliable data architectures (ELT/ETL) and implementing high standards for **Data Quality and Lineage (dbt)**. I apply scientific rigor to ensure system integrity and production readiness.
 
-### 💼 Portfolio contents
-- `index.html`: Homepage (profile summary)
-- `projets.html`: Projects (detailed with live app/API/code links)
-- `cv.html`: Resume (embedded PDF)
-- English version pages: `_en.html`
+### 🔧 Tech Stack
+- **Orchestration & DevOps:** Apache **Airflow** (DAGs, MWAA), **Docker**, GitHub Actions, **Terraform** (IaC)
+- **Data Warehousing:** AWS **Redshift** / S3, PostgreSQL, DuckDB, **dbt Core** (Modeling & Testing)
+- **ETL/ELT Processing:** **Python** (pandas, FastAPI), **PySpark**
+- **Frontend:** HTML, CSS, JavaScript
+
+### 💼 Portfolio Structure
+- `index_en.html`: Homepage (profile summary, key skills)
+- `projets_en.html`: Data Engineering projects (Cloud-native pipelines, dimensional modeling, data quality)
+- `cv_en.html`: Resume (embedded PDF)
+- **International:** Bilingual structure using JavaScript component injection.
 
 ---
 
-## 🗂️ Arborescence
+## 🚀 Featured Projects
+
+### 1. Sectoral - Automated Sectoral Analysis Pipeline
+**Cloud-native ELT pipeline for sectoral financial analysis**
+- **Modeling**: Implementation of a **Star Schema** on Redshift for optimized analytics.
+- **Infrastructure as Code (IaC)**: Full deployment using **Terraform** (AWS S3, Redshift, MWAA).
+- **Data Quality**: Extensive use of **dbt Core** for data validation, lineage, and documentation.
+
+[📂 Source Code](https://github.com/MichaelG-create/Sectoral)
+
+### 2. Bank Branch Footfall Analytics
+**End-to-end production system for banking traffic analysis**
+- **Pipeline Architecture**: Ingestion via FastAPI, large-scale transformation using **PySpark**.
+- **Orchestration**: Robust workflows managed by **Apache Airflow** (real-time + backfill).
+- **Deployment**: Containerization (Docker) and Streamlit interface for visualization.
+
+[🌐 Live App](https://bank-branch-footfall.streamlit.app/) | [📂 Source Code](https://github.com/michaelg-create/bank-branch-footfall)
+
+---
+
+## 🗂️ File Structure (Component Injection Architecture)
+
+The site architecture utilizes JavaScript component injection (Header and Sidebar) to maintain consistency and bilingual features across all pages.
+
 ```
+
 .
 ├── index.html
-├── index_en.html
+├── index\_en.html
 ├── projets.html
-├── projets_en.html
+├── projets\_en.html
 ├── cv.html
-├── cv_en.html
+├── cv\_en.html
+├── components/           \<-- Injected HTML Components
+│   ├── header.html
+│   ├── header\_en.html
+│   ├── sidebar.html
+│   └── sidebar\_en.html
 ├── assets/
-│ ├── css/
-│ │ └── style.css
-│ ├── images/
-│ │ ├── photo.png
-│ │ └── data-flow-diagram.png
-│ └── pdf/
-│ └── CV.pdf
-│ └── CV_en.pdf
+│   ├── css/
+│   │   └── style.css
+│   ├── js/
+│   │   └── inject\_components.js \<-- Injection Script
+│   ├── images/
+│   └── pdf/
+└── README.md
+
 ```
 
----
 
-## ✨ Objectif
 
-Ce portfolio me permet de centraliser :
-- Mon parcours académique et professionnel
-- Mes projets data en production (API, pipeline, visualisation)
-- Une présentation bilingue pour des recruteurs en Suisse ou en France
+## 📬 Contact & Job Search
 
----
-
-## 🚀 Déploiement
-
-Ce site est déployé via GitHub Pages à partir de la branche `main`.
+- 📧 Email: michael.garcia.73@gmail.com
+- 💼 LinkedIn: [michaelgarcia838383](https://linkedin.com/in/michaelgarcia838383)
+- 🐙 GitHub: [michaelg-create](https://github.com/michaelg-create)
+- 📍 Location: Aix-les-Bains, France | **Willing to Relocate (Geneva / Switzerland)**
 
 ---
+
+## 🎯 Looking for
+
+**Data Engineer positions** in international organizations or innovative tech companies, with a focus on:
+- Designing and optimizing **ELT/ETL pipelines**.
+- Implementing robust **Data Quality** standards (dbt, testing).
+- Working with **Cloud-native** data architectures (AWS, Redshift, Terraform).
+- International collaboration (Bilingual portfolio, 🇨🇭 targeting Geneva).
