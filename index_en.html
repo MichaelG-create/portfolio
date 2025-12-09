@@ -19,47 +19,33 @@
 </head>
 <body>
 
-  <header class="top-banner">
-    <nav class="top-nav">
-      <a href="index_en.html" class="left-tab">Portfolio</a>
-      <div class="right-tabs">
-        <a href="index_en.html">Home</a>
-        <a href="projets_en.html">Projects</a>
-        <a href="cv_en.html">Resume</a>
-        <button onclick="switchLang('fr')">🇫🇷🇨🇭 FR</button>
-      </div>
-    </nav>
-  </header>
+    <div id="header-placeholder"></div>
 
   <main class="main-content">
-    <aside class="side-banner">
-      <img src="./assets/images/photo.png" alt="My photo" class="profile-photo" />
-      <p class="name">Michael GARCIA - Ph.D.</p>
-      <p class="desc">Data Engineer - Finance</p>
-      <p><i class="fa-solid fa-location-dot"></i>Aix-les-Bains, France</p>
-      <p><i class="fa-solid fa-location-dot"></i>Geneva, Switzerland</p>
-      <p><i class="fa-solid fa-envelope"></i> <a href="mailto:michaelgarcia73@gmail.com">Email</a></p>
-      <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/in/michaelgarcia838383" target="_blank" rel="noopener">LinkedIn</a></p>
-      <p><i class="fab fa-github"></i> <a href="https://github.com/michaelg-create" target="_blank" rel="noopener">GitHub</a></p>
-    </aside>
+        <div id="sidebar-placeholder"></div>
 
-    <section class="content-area">
+        <section class="content-area">
       <div class="text-block">
-        <h1>Data Engineer | Data & Finance</h1>
-        <h2>Client support and integration of complex data</h2>
+        <h1>Data Engineer | Architecture &amp; Quality</h1>
+        <h2>Ph.D. Analytical Skills Applied to Robust Data Systems</h2>
         <ul>
           <li><strong>Ph.D. in Physics turned Data Engineer</strong></li>
-          <li>Domain expertise (finance, education, project work)</li>
-          <li>Advanced technical stack (Spark, Airflow, ETL)</li>
-          <li>Data optimized for business performance</li>
+          <li><strong>Data Modeling (Star Schema)</strong> &amp; Advanced SQL (PostgreSQL, Redshift)</li>
+          <li><strong>Modern ELT/ETL</strong>: Python, PySpark, dbt Core (Quality &amp; Lineage)</li>
+          <li><strong>Orchestration &amp; CI/CD</strong>: Apache Airflow, Docker, GitHub Actions</li>
+          <li>Infrastructure as Code (Terraform) &amp; Cloud (AWS S3/Redshift)</li>
+          <li>Analytical rigor applied to debugging and pipeline validation</li>
+          <!-- <li>VMware, Windows Server &amp; Active Directory (<em>Secondary SysAdmin knowledge</em>)</li> -->
         </ul>
       </div>
       <div class="image-block">
-        <img src="./assets/images/image_couverture.png" alt="Data Engineer Finance" class="align-left" width="400px"/>
+        <img src="./assets/images/image_couverture.png" alt="Data Engineer Infrastructure" class="align-left" width="400px"/>
       </div>
     </section>
 
   </main>
+
+    <script src="./assets/js/inject_components.js"></script>
 
 </body>
 </html>
