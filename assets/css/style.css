@@ -261,6 +261,29 @@ html {
 }
 
 
+/* Conteneur qui contrôle largeur commune */
+.hero-block {
+  width: 97%;           /* Ajustable : 70%, 800px, etc */
+  margin: auto;
+  text-align: center;
+}
+
+/* Titre + ligne bleue pleine largeur du bloc */
+.hero-block h2 {
+  display: block;
+  border-bottom: 4px solid #3498db; /* tu peux jouer sur l'épaisseur */
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+/* Image alignée à la même largeur */
+.hero-image {
+  width: 100%;           /* prend la largeur de .hero-block */
+  border-radius: 12px;
+  display: block;
+}
+
+
 /* Responsive */
 @media (max-width: 800px) {
   .main-content {
