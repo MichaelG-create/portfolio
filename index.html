@@ -1,49 +1,28 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr"> 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Portfolio - Accueil</title>
-  <link rel="stylesheet" href=" assets/css/style.css" />
+  <title id="page-title">Portfolio</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
 <body>
 
-    <div id="header-placeholder"></div>
+  <div id="header-placeholder"></div>
 
   <main class="main-content">
-      <div id="sidebar-placeholder"></div>
+    <div id="sidebar-placeholder"></div>
 
-      <section class="content-area">
-      
-        <div class="hero-block">
-          <h1>Ingénierie des Données (<strong>Data Engineer</strong>)</h1>
-          <h2>Rigueur d'un Physicien pour l'Architecture Data et la Qualité</h2>
-          <img src=" assets/images/image_couverture.png" alt="Data Engineer Infrastructure" class="hero-image"/>
-        </div>
-
-        <div class="text-block">
-          <ul>
-            <li><strong>Ph.D. en physique reconverti vers l'Ingénierie des Données</strong></li>
-            <li><strong>Modélisation de données (Star Schema)</strong> &amp; SQL Avancé (PostgreSQL, Redshift)</li>
-            <li><strong>ELT/ETL Modernes</strong>: Python, PySpark, dbt Core (Qualité &amp; Lineage)</li>
-            <li><strong>Orchestration &amp; CI/CD</strong>: Apache Airflow, Docker, GitHub Actions</li>
-            <li>Infrastructure as Code (Terraform) &amp; Cloud (AWS S3/Redshift)</li>
-            <li>Rigueur analytique appliquée au débogage et à la validation des pipelines</li>
-            <!-- <li>VMware, Windows Server &amp; Active Directory (<em>Connaissances secondaires en SysAdmin</em>)</li> -->
-          </ul>
-        </div>
-        <!-- <div class="image-block">
-          <img src=" assets/images/image_couverture.png" alt="Data Engineer Infrastructure" class="align-left" width="400px"/>
-        </div> -->
-      <!-- </section> -->
-    </section>
-
+    <section class="content-area" id="app-content">
+      </section>
   </main>
 
-  <script src="assets/js/lang-switch.js"></script>
+  <script src="assets/js/lang-switch.js"></script> 
+  
+  <script src="assets/js/router.js"></script>
 
   <script src="assets/js/inject_components.js"></script>
-
+  
 </body>
 </html>

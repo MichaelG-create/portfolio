@@ -1,20 +1,44 @@
-// Fonction asynchrone pour charger et injecter le HTML
+// Function asynchrone pour charger et injecter le HTML
 async function loadComponent(elementId, componentPath) {
+    // 1. Fetch the new HTML content
     try {
         const response = await fetch(componentPath);
         if (!response.ok) {
-            // Affiche une erreur claire si le fichier n'est pas trouvé
             console.error(`Failed to load component: ${componentPath}. Status: ${response.status}`);
             return;
         }
         const html = await response.text();
+        
+        // 2. Find the target container (either the original placeholder or the element it was replaced by)
         const container = document.getElementById(elementId);
+        
         if (container) {
-            // Utiliser outerHTML pour remplacer le div placeholder par l'élément injecté (header ou aside)
+            // OPTION A: If the placeholder still exists (initial load or previous reload failed to replace completely)
+            // Replace the entire placeholder with the new component's HTML
             container.outerHTML = html;
+            
         } else {
-            console.error(`Container element with ID "${elementId}" not found on the page.`);
+            // OPTION B: The original placeholder was replaced (e.g., 'header-placeholder' is gone, 
+            // replaced by <header class="top-banner">).
+            // We need to find the element that holds the component and replace its content.
+            
+            // NOTE: Since your components are <header> and <aside>, we need a way to 
+            // inject the new HTML *near* where the old ID was.
+            
+            // To be 100% safe and simple, let's target the *first* element that 
+            // looks like the previous component's root (e.g., the <header> or <aside>).
+
+            const newRootSelector = (elementId === 'header-placeholder') ? 'header.top-banner' : 'aside.side-banner';
+            const existingRoot = document.querySelector(newRootSelector);
+
+            if (existingRoot) {
+                // If the root component is already there, replace it completely.
+                existingRoot.outerHTML = html;
+            } else {
+                console.error(`Could not find the container ID "${elementId}" or the existing root element "${newRootSelector}" for replacement.`);
+            }
         }
+        
     } catch (error) {
         console.error('An error occurred during component loading:', error);
     }
@@ -22,15 +46,21 @@ async function loadComponent(elementId, componentPath) {
 
 // Fonction principale pour charger les composants
 function initializeComponents() {
+    // Determine the current language from the <html> tag
     const isEnglish = document.documentElement.lang === 'en';
     const langSuffix = isEnglish ? '_en' : '';
 
-    // Utiliser le chemin absolu /components/
+    // Load Header component
     loadComponent('header-placeholder', `components/header${langSuffix}.html`); 
 
-    // Utiliser le chemin absolu /components/
+    // Load Sidebar component
     loadComponent('sidebar-placeholder', `components/sidebar${langSuffix}.html`);
 }
 
 // Assurez-vous que le DOM est chargé avant d'initialiser les composants
-document.addEventListener('DOMContentLoaded', initializeComponents);
+// This is called on initial page load AND by the switchLang function.
+document.addEventListener('DOMContentLoaded', () => {
+    // We only call initializeComponents here for the first page load.
+    // The switchLang function will handle subsequent reloads.
+    initializeComponents();
+});
