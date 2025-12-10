@@ -7,7 +7,6 @@
   <title>Portfolio - Accueil</title>
   <link rel="stylesheet" href=" assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script src="js/lang-switch.js"></script>
 </head>
 <body>
 
@@ -19,9 +18,12 @@
     <section class="content-area">
       <h1>Data Engineering Projects</h1>
 
+      <article class="hero-block">
+        <h2>Sectoral - Automated Sectoral Analysis Pipeline (<span class="nowrap">06/2025&nbsp;&ndash;&nbsp;ongoing</span>)</h2>
+        <img src="assets/images/sectoral-hero.png" alt="Financial data pipeline hero illustration" class="hero-image" />
+      </article>
+
       <article>
-      
-        <h2>📌 Sectoral - Automated Sectoral Analysis Pipeline (<span class="nowrap">06/2025&nbsp;&ndash;&nbsp;ongoing</span>)</h2>
         <p><em>Objective:</em> Automation of financial market sectoral performance analysis to optimize investment strategies and detect sector rotation opportunities. The pipeline includes <strong>Data Modeling (Star Schema)</strong>.</p>
         <p><em>Stack:</em> Apache <strong>Airflow</strong> (MWAA), <strong>Terraform</strong>, AWS S3/<strong>Redshift</strong>, <strong>dbt Core</strong> (Modeling &amp; Tests), Python (pandas, yfinance), CloudWatch</p>
         
@@ -110,7 +112,9 @@
 
   </main>
 
-    <script src=" assets/js/inject_components.js"></script>
+  <script src="assets/js/lang-switch.js"></script>
 
+  <script src="assets/js/inject_components.js"></script>
+  
 </body>
 </html>
