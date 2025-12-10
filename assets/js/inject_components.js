@@ -26,10 +26,10 @@ function initializeComponents() {
     const langSuffix = isEnglish ? '_en' : '';
 
     // Utiliser le chemin absolu /components/
-    loadComponent('header-placeholder', `/components/header${langSuffix}.html`); 
+    loadComponent('header-placeholder', `components/header${langSuffix}.html`); 
 
     // Utiliser le chemin absolu /components/
-    loadComponent('sidebar-placeholder', `/components/sidebar${langSuffix}.html`);
+    loadComponent('sidebar-placeholder', `components/sidebar${langSuffix}.html`);
 }
 
 // Assurez-vous que le DOM est chargé avant d'initialiser les composants
