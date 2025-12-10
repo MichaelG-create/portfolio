@@ -7,24 +7,7 @@
   <title>Portfolio - Accueil</title>
   <link rel="stylesheet" href=" assets/css/style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <script>
-    function switchLang(lang) {
-      let currentPath = window.location.pathname;
-      if (!currentPath.includes('.html')) {
-        if (lang === 'en') {
-          window.location.href = currentPath + 'index_en.html';
-        } else {
-          window.location.href = currentPath + 'index.html';
-        }
-      } else {
-        if (lang === 'en') {
-          window.location.href = currentPath.replace('.html', '_en.html');
-        } else {
-          window.location.href = currentPath.replace('_en.html', '.html');
-        }
-      }
-    }
-  </script>
+  <script src="js/lang-switch.js"></script>
 </head>
 <body>
 
