@@ -1,91 +1,230 @@
 <h1>Data Engineering Projects</h1>
 
-<article class="hero-block">
-  <h2>Sectoral - Automated Sectoral Analysis Pipeline (<span class="nowrap">06/2025&nbsp;&ndash;&nbsp;ongoing</span>)</h2>
-  <img src="assets/images/sectoral-hero.png" alt="Financial data pipeline hero illustration" class="hero-image" />
-</article>
+<!-- PROJECT 1 -->
+<details class="project-details" open>
+  <summary>
+    Real-Time Market Indices Streaming (<strong>Kafka Prototype</strong>)
+    (<span class="nowrap">12/2025</span>)
+  </summary>
 
-<article>
-  <p><em>Objective:</em> Automation of financial market sectoral performance analysis to optimize investment strategies and detect sector rotation opportunities. The pipeline includes <strong>Data Modeling (Star Schema)</strong>.</p>
-  <p><em>Stack:</em> Apache <strong>Airflow</strong> (MWAA), <strong>Terraform</strong>, AWS S3/<strong>Redshift</strong>, <strong>dbt Core</strong> (Modeling &amp; Tests), Python (pandas, yfinance), CloudWatch</p>
-  
-  <h3>Pipeline Architecture</h3>
-  <div class="architecture-diagram">
-      <div style="margin-bottom: 20px; font-size: 1.1em; font-weight: bold;">Financial Data Pipeline (Cloud ELT Architecture)</div>
-      <div>
-          <span class="flow-step">Financial APIs</span>
-          <span class="arrow">→</span>
-          <span class="flow-step">Python Ingestion (S3)</span>
-          <span class="arrow">→</span>
-          <span class="flow-step">AWS S3 (Landing)</span>
-          <span class="arrow">→</span>
-          <span class="flow-step"><strong>dbt</strong> Transform (<strong>Star Schema</strong> &amp; Tests)</span>
-          <span class="arrow">→</span>
-          <span class="flow-step">Redshift (Data Marts)</span>
-          <span class="arrow">→</span>
-          <span class="flow-step">Analytics/Visualization</span>
-      </div>
+  <article class="hero-block">
+    <img src="assets/images/kafka-grafana-dashboard.png"
+         alt="Kafka streaming Grafana dashboard"
+         class="hero-image" />
+  </article>
+
+  <article class="project-article">
+    <p><em>Objective:</em> Demonstrate an <strong>end-to-end streaming pipeline</strong> for market indices (SP500, STOXX600, NIKKEI225) from ingestion to storage, API and live monitoring dashboards on Linux.</p>
+
+    <p><em>Stack:</em></p>
+    <ul class="stack-list">
+      <li><strong>Streaming:</strong> Kafka (confluent-kafka), Python producer/consumer</li>
+      <li><strong>Storage:</strong> DuckDB</li>
+      <li><strong>API:</strong> Flask (<code>/live</code>, <code>/metrics</code>)</li>
+      <li><strong>Dashboards:</strong> Grafana (Infinity datasource)</li>
+      <li><strong>Runtime:</strong> Docker, Linux/WSL</li>
+      <li><strong>CI:</strong> GitHub Actions (lint + smoke tests)</li>
+    </ul>
+
+    <h3>Streaming Architecture</h3>
+    <div class="architecture-diagram">
+      <img
+        src="assets/images/kafka-grafana-workflow.png"
+        alt="Market indices streaming pipeline from CSV through Kafka, DuckDB, Flask API to Grafana dashboards"
+        class="architecture-image"
+      />
       <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
-          Orchestrated by <strong>Apache Airflow</strong> | <strong>Terraform</strong> Infrastructure | CloudWatch Monitoring
+        Includes <strong>run-level metrics</strong>, structured JSON logs and <strong>CI smoke tests</strong> (GitHub Actions).
       </div>
-  </div>
+    </div>
 
-  <h3>Business Metrics Generated</h3>
-  <div class="metrics-grid">
+    <p><em>Key Features:</em></p>
+    <ul>
+      <li><strong>End-to-end streaming:</strong> Synthetic market ticks streamed through Kafka into DuckDB with Python producer/consumer.</li>
+      <li><strong>Live API:</strong> Flask endpoints exposing prices, volumes and aggregates as JSON.</li>
+      <li><strong>Monitoring mindset:</strong> Run-level metrics (messages processed, errors, duration, max timestamp) stored in DuckDB and logged as JSON.</li>
+      <li><strong>Grafana dashboards:</strong> Infinity datasource reading from the API to display live prices, volumes and summary tables.</li>
+      <li><strong>DevOps practices:</strong> Docker-based Kafka, bash <code>runpipeline.sh</code> script and GitHub Actions smoke tests.</li>
+    </ul>
+
+    <p><em>Links:</em>
+      <a href="https://github.com/MichaelG-create/kafka-market-stream">Source Code &amp; README</a>
+    </p>
+  </article>
+</details>
+
+<!-- PROJECT 2 -->
+<details class="project-details">
+  <summary>
+    Sectoral - Automated Sectoral Analysis Pipeline
+    (<span class="nowrap">06/2025&nbsp;&ndash;&nbsp;ongoing</span>)
+  </summary>
+
+  <article class="hero-block">
+    <img src="assets/images/sectoral-hero.png"
+         alt="Financial data pipeline hero illustration"
+         class="hero-image" />
+  </article>
+
+  <article class="project-article">
+    <p><em>Objective:</em> Automation of financial market sectoral performance analysis to optimize investment strategies and detect sector rotation opportunities. The pipeline includes <strong>Data Modeling (Star Schema)</strong>.</p>
+
+    <p><em>Stack:</em></p>
+    <ul class="stack-list">
+      <li><strong>Orchestration:</strong> Apache Airflow (MWAA)</li>
+      <li><strong>Infrastructure:</strong> Terraform, AWS S3, Redshift</li>
+      <li><strong>Transformations:</strong> dbt Core (Modeling &amp; Tests)</li>
+      <li><strong>Language:</strong> Python (pandas, yfinance)</li>
+      <li><strong>Monitoring:</strong> CloudWatch</li>
+    </ul>
+
+    <h3>Workflow</h3>
+    <div class="architecture-diagram">
+      <img
+        src="assets/images/sectoral-workflow.png"
+        alt="Sectoral cloud ELT workflow from financial APIs through S3, dbt and Redshift to analytics"
+        class="architecture-image"
+      />
+      <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+        Orchestrated by <strong>Apache Airflow</strong> on AWS MWAA, provisioned with <strong>Terraform</strong>, with data quality and lineage managed by <strong>dbt</strong>.
+      </div>
+    </div>
+
+    <h3>Business Metrics Generated</h3>
+    <div class="metrics-grid">
       <div class="metric-item">
-          <div class="metric-value">20</div>
-          <div>Stocks analyzed</div>
+        <div class="metric-value">500+</div>
+        <div>Stocks analyzed</div>
       </div>
       <div class="metric-item">
-          <div class="metric-value">5</div>
-          <div>Sectors covered</div>
+        <div class="metric-value">11</div>
+        <div>Sectors covered</div>
       </div>
       <div class="metric-item">
-          <div class="metric-value">15+</div>
-          <div>Metrics calculated</div>
+        <div class="metric-value">90%+</div>
+        <div>Test coverage</div>
       </div>
       <div class="metric-item">
-          <div class="metric-value">Daily</div>
-          <div>Analysis frequency</div>
+        <div class="metric-value">Daily</div>
+        <div>Automation</div>
       </div>
-  </div>
+    </div>
 
-  <p><em>Key Features:</em></p>
-  <ul>
-      <li><strong>Dimensional Modeling</strong>: Implemented <strong>Star Schema</strong> (Fact and Dimension Tables) on Redshift.</li>
-      <li><strong>Data Quality</strong>: Used dbt for data validation and <strong>lineage</strong> documentation.</li>
-      <li><strong>Performance Analysis</strong>: Sectoral returns, momentum, relative comparisons</li>
-      <li><strong>Risk Management</strong>: Volatility, VaR, Sharpe ratios by sector</li>
-      <li><strong>Correlation Analysis</strong>: Inter-sectoral matrices, regime detection</li>
-  </ul>
+    <p><em>Key Features:</em></p>
+    <ul>
+      <li><strong>Dimensional modeling:</strong> Implemented <strong>Star Schema</strong> (fact and dimension tables) on Redshift.</li>
+      <li><strong>Data quality:</strong> dbt tests and lineage documentation for robust analytics.</li>
+      <li><strong>Performance analysis:</strong> Sectoral returns, momentum and relative performance.</li>
+      <li><strong>Risk management:</strong> Volatility, VaR and Sharpe ratios by sector.</li>
+      <li><strong>Correlation analysis:</strong> Inter-sector matrices and regime detection.</li>
+    </ul>
 
-  <p><em>Infrastructure:</em> Cloud-native architecture with <strong>Infrastructure as Code (Terraform)</strong>, orchestrated pipeline (<strong>Airflow</strong>), comprehensive monitoring (CloudWatch), and advanced SQL transformations (<strong>dbt</strong>).</p>
+    <p><em>Links:</em>
+      <a href="https://github.com/MichaelG-create/Sectoral">Source Code &amp; Documentation</a> |
+      <a href="https://github.com/MichaelG-create/Sectoral/blob/master/sectoral-detailed-readme.md">Detailed README</a>
+    </p>
+  </article>
+</details>
 
-  <p><em>Links:</em> 
-    <a href="https://github.com/MichaelG-create/Sectoral">Source Code &amp; Documentation</a> | 
-    <a href="https://github.com/MichaelG-create/Sectoral/blob/master/sectoral-detailed-readme.md">Detailed README</a>
-  </p>
+<!-- PROJECT 3 -->
+<details class="project-details">
+  <summary>
+    Bank Branch Footfall (<strong>PySpark Data Pipeline</strong>)
+    (<span class="nowrap">01/2025&nbsp;&ndash;&nbsp;03/2025</span>)
+  </summary>
 
-  <h2>📌 Bank branch footfall (<strong>PySpark Data Pipeline</strong>) (<span class="nowrap">01/2025&nbsp;&ndash;&nbsp;03/2025</span>)</h2>
-  <p><em>Goal:</em> Automate monitoring and analysis of visitor traffic in bank branches, enabling <strong>optimal resource allocation</strong> (staffing) in real-time.</p>
-  <p><em>Stack:</em> <strong>FastAPI</strong>, <strong>PySpark</strong>, <strong>Airflow</strong>, <strong>Docker</strong>, DuckDB, Streamlit</p>
-  <p><em>Description:</em> Integration of a raw data API, large-scale data transformation using <strong>PySpark</strong>, and full workflow orchestration with <strong>Airflow</strong> (real-time + backfill DAG).</p>
-  <h3>Data Flow Diagram</h3>
-  <img src=" assets/images/data-flow-diagram.png" alt="Data Flow Diagram" class="banner-image" width="800px" />
-  <p><em>Links:</em> 
-    <a href="https://bank-branch-footfall.streamlit.app/">Live App</a> | 
-    <a href="https://bank-branch-footfall.onrender.com/get_visitor_count?date_time=2025-05-29%2009:05&agency_name=Aix_les_bains_1">Live API</a> | 
-    <a href="https://github.com/michaelg-create/bank-branch-footfall">Source Code</a>
-  </p>
-</article>
+  <article class="hero-block">
+    <img src="assets/images/data-flow-diagram.png"
+         alt="Bank branch footfall data flow diagram"
+         class="hero-image" />
+  </article>
 
-<article>
-  <h2>Complementary Projects</h2>
-  <h3>📌 SQL Spaced Repetition System (<strong>Data App</strong>)</h3>
-  <p><em>Goal:</em> Learn (and retain!) the most useful <strong>SQL</strong> commands with a spaced repetition system.</p>
-  <p><em>Stack:</em> Python, <strong>SQL</strong>, DuckDB, Streamlit</p>
-  <p><em>Links:</em> 
-    <a href="https://srssql.streamlit.app/">Live App</a> | 
-    <a href="https://github.com/michaelg-create/SRS_SQL">Source Code</a> 
-  </p>
-</article>
+  <article class="project-article">
+    <p><em>Objective:</em> Automate monitoring and analysis of visitor traffic in bank branches to enable <strong>optimal resource allocation</strong> (staffing) in near real-time.</p>
+
+    <p><em>Stack:</em></p>
+    <ul class="stack-list">
+      <li><strong>Ingestion/API:</strong> FastAPI</li>
+      <li><strong>Processing:</strong> PySpark</li>
+      <li><strong>Orchestration:</strong> Airflow</li>
+      <li><strong>Storage:</strong> DuckDB, Parquet-style outputs</li>
+      <li><strong>Visualization:</strong> Streamlit</li>
+      <li><strong>Containerization:</strong> Docker</li>
+    </ul>
+
+    <h3>Workflow</h3>
+    <div class="architecture-diagram">
+      <img
+        src="assets/images/bank-footfall-workflow.png"
+        alt="Bank branch footfall workflow from sensors and FastAPI through PySpark and DuckDB to Streamlit dashboard"
+        class="architecture-image"
+      />
+      <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+        Ingestion via <strong>FastAPI</strong>, batched transforms with <strong>PySpark</strong>, orchestrated by <strong>Airflow</strong>, exposed to analysts through a <strong>Streamlit</strong> dashboard.
+      </div>
+    </div>
+
+    <p><em>Key Features:</em></p>
+    <ul>
+      <li><strong>Scalable processing:</strong> Large-scale transformations with <strong>PySpark</strong> for branch and time-based aggregations.</li>
+      <li><strong>API integration:</strong> FastAPI endpoint exposing visitor counts for operational teams.</li>
+      <li><strong>Scenario analysis:</strong> Streamlit dashboard to explore staffing scenarios and peak periods.</li>
+      <li><strong>Orchestrated workflows:</strong> Airflow DAGs for both streaming-like ingestion and historical backfill.</li>
+    </ul>
+
+    <p><em>Links:</em>
+      <a href="https://bank-branch-footfall.streamlit.app/">Live App</a> |
+      <a href="https://bank-branch-footfall.onrender.com/get_visitor_count?date_time=2025-05-29%2009:05&agency_name=Aix_les_bains_1">Live API</a> |
+      <a href="https://github.com/michaelg-create/bank-branch-footfall">Source Code</a>
+    </p>
+  </article>
+</details>
+
+<!-- PROJECT 4 -->
+<details class="project-details">
+  <summary>
+    SQL Spaced Repetition System (<strong>Data App</strong>)
+    (<span class="nowrap">2024</span>)
+  </summary>
+
+  <article class="hero-block">
+    <img src="assets/images/srs-sql-hero.png"
+         alt="SQL spaced repetition app screenshot"
+         class="hero-image" />
+  </article>
+
+  <article class="project-article">
+    <p><em>Objective:</em> Learn (and retain) the most useful <strong>SQL</strong> commands with a spaced repetition system tailored to data practitioners.</p>
+
+    <p><em>Stack:</em></p>
+    <ul class="stack-list">
+      <li><strong>Language:</strong> Python</li>
+      <li><strong>Database:</strong> SQL, DuckDB</li>
+      <li><strong>Frontend:</strong> Streamlit</li>
+    </ul>
+
+    <h3>Workflow</h3>
+    <div class="architecture-diagram">
+      <img
+        src="assets/images/srs-sql-workflow.png"
+        alt="SQL spaced repetition workflow from curated exercises through DuckDB and scheduler to Streamlit UI"
+        class="architecture-image"
+      />
+      <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+        Curated SQL exercises stored in <strong>DuckDB</strong>, scheduled by a review engine and surfaced in a <strong>Streamlit</strong> UI with progress tracking.
+      </div>
+    </div>
+
+    <p><em>Key Features:</em></p>
+    <ul>
+      <li><strong>Active learning:</strong> Card-based review of practical SQL queries and patterns.</li>
+      <li><strong>Progress tracking:</strong> Performance history stored in DuckDB to adapt repetition.</li>
+      <li><strong>Lightweight deployment:</strong> Streamlit app for quick local or cloud hosting.</li>
+    </ul>
+
+    <p><em>Links:</em>
+      <a href="https://srssql.streamlit.app/">Live App</a> |
+      <a href="https://github.com/michaelg-create/SRS_SQL">Source Code</a>
+    </p>
+  </article>
+</details>

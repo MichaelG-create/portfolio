@@ -1,4 +1,7 @@
-/* TYPOGRAPHY */
+/* ============================= */
+/* Base / Typography             */
+/* ============================= */
+
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 1rem;
@@ -9,18 +12,34 @@ body {
   background-color: #ecf0f1;
 }
 
-/* HEADINGS */
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+strong {
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+em {
+  color: #7f8c8d;
+  font-weight: 500;
+}
+
+/* ============================= */
+/* Headings                      */
+/* ============================= */
+
 h1 {
   font-size: 2.25rem;
   margin-bottom: 1rem;
 }
 
-h2 {list-style: none;
+h2 {
   font-size: 1.75rem;
   margin-bottom: 0.8rem;
   color: #2c3e50;
-  border-bottom: 2px solid #3498db;
-  padding-bottom: 10px;
 }
 
 h3 {
@@ -30,26 +49,12 @@ h3 {
   margin-top: 25px;
 }
 
-/* PARAGRAPHS */
-p {
-  font-size: 1rem;
-  margin-bottom: 1rem;
-}
+/* ============================= */
+/* Lists                         */
+/* ============================= */
 
-/* STRONG (bold text) */
-strong {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-/* EMPHASIS */
-em {
-  color: #7f8c8d;
-  font-weight: 500;
-}
-
-/* LISTS */
-ul, ol {
+ul,
+ol {
   padding-left: 1.5rem;
   margin-bottom: 1.2rem;
 }
@@ -59,17 +64,24 @@ li {
   line-height: 1.5;
 }
 
-/* LINKS */
+/* ============================= */
+/* Links                         */
+/* ============================= */
+
 a {
-  color: #3498db;
+  color: #2980b9;       /* slightly deeper blue */
   text-decoration: none;
+  font-weight: 500;
 }
 
 a:hover {
   text-decoration: underline;
 }
 
-/* SPACING HELPERS */
+/* ============================= */
+/* Spacing helpers               */
+/* ============================= */
+
 .mt-2 { margin-top: 0.5rem; }
 .mt-4 { margin-top: 1rem; }
 .mt-6 { margin-top: 1.5rem; }
@@ -77,7 +89,35 @@ a:hover {
 .mb-4 { margin-bottom: 1rem; }
 .mb-6 { margin-bottom: 1.5rem; }
 
-/* TOP BANNER (Header jaune horizontal) */
+/* ============================= */
+/* Global layout                 */
+/* ============================= */
+
+html {
+  overflow-y: scroll;
+}
+
+.main-content {
+  display: flex;
+  max-width: 1200px;
+  margin: 20px auto;
+  min-height: 70vh;
+  gap: 20px;
+}
+
+.content-area {
+  flex-grow: 1;
+  background: #fafafa;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px #eee;
+  border-radius: 8px;
+}
+
+/* ============================= */
+/* Top banner / nav              */
+/* ============================= */
+
 .top-banner {
   background-color: #f5a623;
   width: 100%;
@@ -105,42 +145,20 @@ a:hover {
   border-radius: 4px;
 }
 
-/* ------------------------------------- */
-/* Layout et Sidebar */
-/* ------------------------------------- */
+/* ============================= */
+/* Sidebar                       */
+/* ============================= */
 
-.main-content {
-  display: flex;
-  max-width: 1200px;
-  margin: 20px auto;
-  min-height: 70vh;
-  gap: 20px;
-}
-
-/* SIDEBAR (Bannière verticale à gauche) */
 .side-banner {
   width: 300px;
   min-width: 250px;
   padding: 20px;
-  background-color: #fdf5e6; /* Jaune très pâle */
+  background-color: #fdf5e6; /* pale yellow */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   border-radius: 8px;
   text-align: center;
   align-self: flex-start;
 }
-
-.content-area {
-  flex-grow: 1;
-  background: #fafafa;
-  padding: 20px;
-  box-sizing: border-box;
-  box-shadow: 0 0 10px #eee;
-  border-radius: 8px;
-}
-
-/* ------------------------------------- */
-/* Éléments dans la Sidebar */
-/* ------------------------------------- */
 
 .profile-photo {
   width: 150px;
@@ -164,10 +182,9 @@ a:hover {
   margin: 0 0 15px 0;
 }
 
-/* CORRECTION : Réduire l'espace vertical entre les éléments de contact */
+/* contact lines inside sidebar */
 .side-banner p:not(.name):not(.desc) {
-  /* Réduire la marge verticale de 5px à 2px ou 0px */
-  margin: 2px 0; /* 2px en haut, 2px en bas */
+  margin: 2px 0;
   font-size: 0.95em;
   text-align: left;
 }
@@ -177,9 +194,9 @@ a:hover {
   color: #f5a623;
 }
 
-/* ------------------------------------- */
-/* Autres Styles d'Images et Projets */
-/* ------------------------------------- */
+/* ============================= */
+/* Images / hero                 */
+/* ============================= */
 
 .banner-image {
   border-radius: 16px;
@@ -189,7 +206,7 @@ a:hover {
   max-width: 100%;
   height: auto;
   border: 1px solid #ddd;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .align-left {
@@ -206,6 +223,30 @@ a:hover {
   display: block;
   margin: 20px auto;
 }
+
+/* hero block wrapper (title + image aligned) */
+.hero-block {
+  width: 100%;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+
+.hero-block h2 {
+  display: block;
+  border: none;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.hero-image {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+}
+
+/* ============================= */
+/* Metrics grid                  */
+/* ============================= */
 
 .metrics-grid {
   display: grid;
@@ -228,75 +269,163 @@ a:hover {
   color: #27ae60;
 }
 
+/* ============================= */
+/* Architecture diagram          */
+/* ============================= */
+
+/* Container (now simple, no yellow background) */
 .architecture-diagram {
-  background: linear-gradient(135deg, #f5a623 0%, #e8941a 100%);
-  color: white;
-  padding: 30px;
-  border-radius: 12px;
   text-align: center;
-  margin: 25px 0;
-  font-family: 'Courier New', monospace;
+  margin: 2rem 0;
 }
 
-.flow-step {
+/* Optional: if you still use the flow-step / arrow chips */
+.architecture-diagram .flow-step {
   display: inline-block;
-  margin: 5px 10px;
-  padding: 8px 15px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 20px;
+  margin: 4px 8px;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
   font-size: 0.9em;
+  border: 1px solid rgba(255, 255, 255, 0.35);
 }
 
-.arrow {
+.architecture-diagram .arrow {
   font-size: 1.2em;
-  margin: 0 10px;
+  margin: 0 6px;
+  opacity: 0.9;
 }
+
+/* Image version of the architecture diagram */
+.architecture-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* ============================= */
+/* Collapsible project sections  */
+/* ============================= */
+
+.project-details {
+  margin-bottom: 2rem;
+  border-radius: 10px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 0.5rem 1.5rem 1.5rem;
+}
+
+/* remove default marker */
+.project-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* clickable header bar */
+.project-details > summary {
+  list-style: none;
+  cursor: pointer;
+  font-size: 1.35rem;     /* bigger project titles */
+  font-weight: 650;
+  color: #1f2c3a;
+  border-bottom: 2px solid #3498db;
+  padding: 0.9rem 0;
+  margin-bottom: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+/* arrow icon */
+.project-details > summary::before {
+  content: "▸";
+  display: inline-block;
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+  color: #3498db;
+  transition: transform 0.2s ease;
+}
+
+.project-details[open] > summary::before {
+  transform: rotate(90deg);
+}
+
+/* ============================= */
+/* Project sections / stacks     */
+/* ============================= */
+
+.project-article {
+  margin-bottom: 1.5rem;
+  padding: 0 0 0.5rem 0;
+}
+
+/* Emphasized labels like "Objective:", "Stack:", "Key Features:" */
+.project-article p em {
+  font-style: normal;
+  font-weight: 600;
+  color: #2980b9; /* stronger blue accent */
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+
+/* add a bit more separation above lists that follow labels */
+.project-article p em {
+  display: inline-block;
+  margin-bottom: 0.15rem;
+}
+
+.project-article ul {
+  margin-top: 0.25rem;
+}
+
+
+/* first bold word in stack / feature lists */
+.project-article ul li > strong {
+  color: #2c3e50;        /* dark navy */
+  font-weight: 700;
+}
+
+.project-article p em + a,
+.project-article p em + span a {
+  font-weight: 600;
+}
+
+.stack-list {
+  margin: 0 0 1rem 0;
+  padding-left: 1.2rem;
+  font-size: 0.95rem;
+}
+
+.stack-list li {
+  margin-bottom: 0.15rem;
+}
+
+/* ============================= */
+/* Utilities                     */
+/* ============================= */
 
 .nowrap {
   white-space: nowrap;
 }
 
-html {
-  overflow-y: scroll;
-}
+/* ============================= */
+/* Responsive                    */
+/* ============================= */
 
-
-/* Conteneur qui contrôle largeur commune */
-.hero-block {
-  width: 97%;           /* Ajustable : 70%, 800px, etc */
-  margin: auto;
-  text-align: center;
-}
-
-/* Titre + ligne bleue pleine largeur du bloc */
-.hero-block h2 {
-  display: block;
-  /* border-bottom: 4px solid #3498db; tu peux jouer sur l'épaisseur */
-  border:none;
-  padding-bottom: 10px;
-  margin-bottom: 20px;
-}
-
-/* Image alignée à la même largeur */
-.hero-image {
-  width: 100%;           /* prend la largeur de .hero-block */
-  border-radius: 12px;
-  display: block;
-}
-
-
-/* Responsive */
 @media (max-width: 800px) {
   .main-content {
     flex-direction: column;
   }
-  .side-banner, .content-area {
+
+  .side-banner,
+  .content-area {
     width: 100%;
   }
+
   .top-nav {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .right-tabs {
     margin-top: 10px;
   }
