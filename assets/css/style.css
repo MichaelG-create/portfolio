@@ -244,6 +244,61 @@ html {
   display: block;
 }
 
+/* Hero image fading / blinking for Bank Branch Footfall */
+.hero-block-cycle .hero-images-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto 1rem auto;
+}
+
+/* Stack both images on top of each other */
+.hero-block-cycle .hero-image-primary,
+.hero-block-cycle .hero-image-secondary {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+  animation-duration: 6s;           /* adjust speed here */
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+}
+
+/* First screenshot visible first, then fades out */
+.hero-block-cycle .hero-image-primary {
+  animation-name: heroFadePrimary;
+}
+
+/* Second screenshot fades in when the first fades out */
+.hero-block-cycle .hero-image-secondary {
+  animation-name: heroFadeSecondary;
+}
+
+/* Keyframes: alternate opacity between the two */
+@keyframes heroFadePrimary {
+  0%, 40%   { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+@keyframes heroFadeSecondary {
+  0%, 40%   { opacity: 0; }
+  50%, 100% { opacity: 1; }
+}
+
+.hero-block-cycle .hero-image-spacer {
+  display: block;
+  width: 100%;
+  height: auto;
+  visibility: hidden;   /* keeps height */
+  opacity: 0;           /* belt-and-braces: no pixels */
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+
+
 /* ============================= */
 /* Metrics grid                  */
 /* ============================= */

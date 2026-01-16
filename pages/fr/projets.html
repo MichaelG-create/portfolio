@@ -133,10 +133,22 @@
     (<span class="nowrap">01/2025&nbsp;&ndash;&nbsp;03/2025</span>)
   </summary>
 
-  <article class="hero-block">
-    <img src="assets/images/data-flow-diagram.png"
-         alt="Diagramme de flux de données d'affluence en agence bancaire"
-         class="hero-image" />
+  <article class="hero-block hero-block-cycle">
+    <div class="hero-images-wrapper">
+      <!-- Spacer : garde la hauteur, aucun visuel -->
+      <img src="assets/images/webapp-multiple-agencies-screenshot.png"
+          alt=""
+          class="hero-image hero-image-spacer" />
+
+
+      <!-- 2 captures qui se superposent et alternent -->
+      <img src="assets/images/webapp-multiple-agencies-screenshot.png"
+          alt="Application web d'affluence bancaire affichant plusieurs agences"
+          class="hero-image hero-image-primary" />
+      <img src="assets/images/webapp-single-agency-screenshot.png"
+          alt="Application web d'affluence bancaire focalisée sur une seule agence"
+          class="hero-image hero-image-secondary" />
+    </div>
   </article>
 
   <article class="project-article">
@@ -148,7 +160,7 @@
       <li><strong>Traitement :</strong> PySpark</li>
       <li><strong>Orchestration :</strong> Airflow</li>
       <li><strong>Stockage :</strong> DuckDB, sorties au format Parquet</li>
-      <li><strong>Visualisation :</strong> Streamlit</li>
+      <li><strong>Visualisation :</strong> Streamlit (application publique)</li>
       <li><strong>Conteneurisation :</strong> Docker</li>
     </ul>
 
@@ -160,16 +172,16 @@
         class="architecture-image"
       />
       <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8%;">
-        Ingestion via <strong>FastAPI</strong>, transformations batch avec <strong>PySpark</strong>, orchestrées par <strong>Airflow</strong>, exposées aux analystes dans un dashboard <strong>Streamlit</strong>.
+        Ingestion via <strong>FastAPI</strong>, transformations batch avec <strong>PySpark</strong>, orchestrées par <strong>Airflow</strong>, persistées dans <strong>DuckDB</strong> et exposées aux analystes via un dashboard <strong>Streamlit</strong>.
       </div>
     </div>
 
     <p><em>Fonctionnalités clés :</em></p>
     <ul>
-      <li><strong>Traitement à grande échelle :</strong> Transformations volumétriques avec <strong>PySpark</strong> pour des agrégations par agence et par plage horaire.</li>
-      <li><strong>Intégration API :</strong> Endpoint FastAPI exposant les compteurs de visiteurs pour les équipes opérationnelles.</li>
-      <li><strong>Analyse de scénarios :</strong> Dashboard Streamlit pour explorer différents scénarios de staffing et identifier les périodes de pointe.</li>
-      <li><strong>Workflows orchestrés :</strong> DAGs Airflow pour l’ingestion quasi temps réel et le recalcul historique.</li>
+      <li><strong>Traitement à grande échelle :</strong> Jobs PySpark calculant des KPI d’affluence (pics, moyennes, fenêtres glissantes) par agence et par plage horaire.</li>
+      <li><strong>Intégration API :</strong> Endpoint FastAPI retournant les compteurs de visiteurs par agence pour les équipes opérationnelles.</li>
+      <li><strong>Analyse de scénarios :</strong> Dashboard Streamlit permettant de comparer les agences, identifier les périodes de pointe et tester différents scénarios de staffing.</li>
+      <li><strong>Workflows orchestrés :</strong> DAGs Airflow pour l’ingestion quasi temps réel et les recalculs historiques.</li>
     </ul>
 
     <p><em>Liens :</em>

@@ -133,10 +133,21 @@
     (<span class="nowrap">01/2025&nbsp;&ndash;&nbsp;03/2025</span>)
   </summary>
 
-  <article class="hero-block">
-    <img src="assets/images/data-flow-diagram.png"
-         alt="Bank branch footfall data flow diagram"
-         class="hero-image" />
+  <article class="hero-block hero-block-cycle">
+    <div class="hero-images-wrapper">
+      <!-- spacer: visible to layout, invisible to user -->
+      <img src="assets/images/webapp-multiple-agencies-screenshot.png"
+          alt=""
+          class="hero-image hero-image-spacer" />
+
+      <!-- animated images stacked on top -->
+      <img src="assets/images/webapp-multiple-agencies-screenshot.png"
+          alt="Bank branch footfall web app showing multiple agencies"
+          class="hero-image hero-image-primary" />
+      <img src="assets/images/webapp-single-agency-screenshot.png"
+          alt="Bank branch footfall web app focusing on a single agency"
+          class="hero-image hero-image-secondary" />
+    </div>
   </article>
 
   <article class="project-article">
@@ -144,12 +155,13 @@
 
     <p><em>Stack:</em></p>
     <ul class="stack-list">
-      <li><strong>Ingestion/API:</strong> FastAPI</li>
-      <li><strong>Processing:</strong> PySpark</li>
-      <li><strong>Orchestration:</strong> Airflow</li>
-      <li><strong>Storage:</strong> DuckDB, Parquet-style outputs</li>
-      <li><strong>Visualization:</strong> Streamlit</li>
-      <li><strong>Containerization:</strong> Docker</li>
+      <li><strong>Ingestion/API:</strong> FastAPI (live visitor counter endpoint)</li>
+      <li><strong>Processing:</strong> PySpark batch jobs for aggregations and cleaning</li>
+      <li><strong>Orchestration:</strong> Airflow DAGs for ingestion and backfill</li>
+      <li><strong>Storage:</strong> DuckDB with partitioned, Parquet-style outputs</li>
+      <li><strong>Visualization:</strong> Streamlit dashboard deployed as a public app</li>
+      <li><strong>Containerization:</strong> Docker for local dev and reproducible runs</li>
+      <li><strong>Quality:</strong> High pytest coverage on transforms and API</li>
     </ul>
 
     <h3>Workflow</h3>
@@ -160,16 +172,17 @@
         class="architecture-image"
       />
       <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
-        Ingestion via <strong>FastAPI</strong>, batched transforms with <strong>PySpark</strong>, orchestrated by <strong>Airflow</strong>, exposed to analysts through a <strong>Streamlit</strong> dashboard.
+        Ingestion via <strong>FastAPI</strong>, batched transforms with <strong>PySpark</strong>, orchestrated by <strong>Airflow</strong>, persisted in <strong>DuckDB</strong> and exposed to analysts through a <strong>Streamlit</strong> dashboard.
       </div>
     </div>
 
     <p><em>Key Features:</em></p>
     <ul>
-      <li><strong>Scalable processing:</strong> Large-scale transformations with <strong>PySpark</strong> for branch and time-based aggregations.</li>
-      <li><strong>API integration:</strong> FastAPI endpoint exposing visitor counts for operational teams.</li>
-      <li><strong>Scenario analysis:</strong> Streamlit dashboard to explore staffing scenarios and peak periods.</li>
-      <li><strong>Orchestrated workflows:</strong> Airflow DAGs for both streaming-like ingestion and historical backfill.</li>
+      <li><strong>Scalable processing:</strong> PySpark jobs compute daily and intra-day branch-level footfall KPIs (peaks, averages, rolling windows).</li>
+      <li><strong>Operational API:</strong> FastAPI endpoint returns live visitor counts per branch for integration with frontline tools.</li>
+      <li><strong>Scenario analysis:</strong> Streamlit dashboard lets managers explore peak periods, compare branches and test staffing scenarios.</li>
+      <li><strong>Orchestrated workflows:</strong> Airflow orchestrates both near real-time ingestion and historical backfills for reprocessing.</li>
+      <li><strong>Engineering practices:</strong> Dockerized services, configuration via environment variables and tests on business logic and API contracts.</li>
     </ul>
 
     <p><em>Links:</em>
