@@ -193,6 +193,7 @@
 </details>
 
 <!-- PROJET 4 -->
+<!-- PROJECT 4 -->
 <details class="project-details">
   <summary>
     SQL Spaced Repetition System (<strong>Data App</strong>)
@@ -201,14 +202,42 @@
 
   <article class="hero-block">
     <img src="assets/images/srs-sql-hero.png"
-         alt="Capture de l’application de répétitions espacées SQL"
+         alt="SQL spaced repetition app screenshot"
          class="hero-image" />
   </article>
 
   <article class="project-article">
-    <p><em>Objectif :</em> Apprendre (et retenir) les commandes les plus utiles en <strong>SQL</strong> grâce à un système de répétitions espacées conçu pour les praticiens de la donnée.</p>
+    <p><em>Objectif:</em> Apprendre (et retenir) les  commandes <strong>SQL</strong> les plus utiles avec un système de répétitions adapté.</p>
 
-    <p><em>Stack :</em></p>
+    <p><em>Stack:</em></p>
     <ul class="stack-list">
-      <li><strong>Langage :</strong> Python</li>
-      <li><strong>Base de don
+      <li><strong>Language:</strong> Python</li>
+      <li><strong>Database:</strong> SQL, DuckDB</li>
+      <li><strong>Frontend:</strong> Streamlit</li>
+    </ul>
+
+    <h3>Workflow</h3>
+    <div class="architecture-diagram">
+      <img
+        src="assets/images/srs-sql-workflow.png"
+        alt="SQL spaced repetition workflow from curated exercises through DuckDB and scheduler to Streamlit UI"
+        class="architecture-image"
+      />
+      <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+        Exercices SQL stockés en base de données <strong>DuckDB</strong>, pilotés par un moteur de révision et affichés dans une interface <strong>Streamlit</strong>.
+      </div>
+    </div>
+
+    <p><em>Points clés:</em></p>
+    <ul>
+      <li><strong>Mémorisation active:</strong> Révision par la pratique de requètes SQL.</li>
+      <li><strong>Suivi des progrès:</strong> Date de réussite des exercices mise à jour automatiquement.</li>
+      <li><strong>Déploiement léger:</strong> application Streamlit (déploiement local ou cloud rapide).</li>
+    </ul>
+
+    <p><em>Liens:</em>
+      <a href="https://space-sql.streamlit.app/">Appli live</a> |
+      <a href="https://github.com/michaelg-create/SRS_SQL">Code source</a>
+    </p>
+  </article>
+</details>
