@@ -1,9 +1,62 @@
 <h1>Data Engineering Projects</h1>
 
-<!-- PROJECT 1 -->
+
+<!-- PROJECT 0 - ALPINE LAMBDA TRADE -->
 <details class="project-details" open>
   <summary>
-    Real-Time Market Indices Streaming (<strong>Kafka Prototype</strong>)
+    Alpine Lambda Trade (<strong>High-Throughput Lambda Architecture</strong>)
+    (<span class="nowrap">04/2026</span>)
+  </summary>
+
+  <article class="hero-block">
+    <img src="assets/images/kafka-grafana-dashboard.png"
+         alt="Alpine Lambda Trade Architecture"
+         class="hero-image" />
+  </article>
+
+  <article class="project-article">
+    <p><em>Objective:</em> Design and implement a massive-scale <strong>Lambda Architecture (Batch + Speed Layer)</strong> consuming high-frequency financial websockets, with a strong focus on FinOps (cost optimization) and data reliability (idempotency).</p>
+
+    <p><em>Stack:</em></p>
+    <ul class="stack-list">
+      <li><strong>Cloud & IaC:</strong> AWS (Lambda, S3, SQS), Terraform</li>
+      <li><strong>Data Warehouse:</strong> Snowflake (auto-ingest via Snowpipe)</li>
+      <li><strong>Transformations:</strong> dbt Core (Incremental models, Quality Tests, Medallion Architecture)</li>
+      <li><strong>Streaming:</strong> Async Python Producer (Binance WebSockets)</li>
+      <li><strong>Serving:</strong> Streamlit</li>
+    </ul>
+
+    <h3>High Availability Architecture</h3>
+    <div class="architecture-diagram">
+      <div style="padding: 1rem; border: 1px solid var(--border-color); border-radius: 8px; background: var(--card-bg); text-align: left; font-size: 0.9em; margin-bottom: 15px;">
+        <strong>Real-time flow (Speed):</strong> Ingestion to AWS SQS -> AWS Lambda (EMA/Anomaly calculation in ms) -> Snowflake STG_REALTIME.<br/>
+        <strong>Historical flow (Batch):</strong> S3 Buffering (Parquet) -> Snowpipe -> dbt (Cleansing & Deduplication) -> Snowflake SILVER.<br/>
+        Both layers fuse dynamically (UNION ALL) for the final Business View ensuring zero overlap.
+      </div>
+      <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
+        Infrastructure entirely provisioned via <strong>Terraform</strong> (IAM roles, SQS, Snowflake Integrations).
+      </div>
+    </div>
+
+    <p><em>Key Features & Business Impact:</em></p>
+    <ul>
+      <li><strong>FinOps Strategy:</strong> Migrated from Amazon Kinesis to AWS SQS FIFO, reducing cloud costs by 80% while retaining message durability and strict ordering.</li>
+      <li><strong>Quality & Reliability (dbt):</strong> Idempotent pipelines built with dbt incremental models. Extensive use of <code>dbt test</code> for tracking unique constraints and lineage.</li>
+      <li><strong>Anomaly Detection:</strong> On-the-fly statistical anomaly detection (Bollinger Bands) via an AWS Lambda Serverless function using a "warm start" stateful cache.</li>
+      <li><strong>Data Contracts:</strong> Asynchronous error handling protecting against dropping websockets (designed for Dead Letter Queue integration).</li>
+    </ul>
+
+    <p><em>Links:</em>
+      <a href="https://github.com/MichaelG-create/alpine-lambda-trade">Source Code (IaC, dbt, Python)</a>
+    </p>
+  </article>
+</details>
+        
+
+<!-- PROJECT 1 -->
+<details class="project-details">
+  <summary>
+    Real-Time Market Data Pipeline (<strong>Kafka & SLI/SLO</strong>)
     (<span class="nowrap">12/2025</span>)
   </summary>
 
@@ -14,7 +67,7 @@
   </article>
 
   <article class="project-article">
-    <p><em>Objective:</em> Demonstrate an <strong>end-to-end streaming pipeline</strong> for market indices (SP500, STOXX600, NIKKEI225) from ingestion to storage, API and live monitoring dashboards on Linux.</p>
+    <p><em>Objective:</em> Design a resilient <strong>end-to-end real-time data pipeline</strong> for market indices (SP500, STOXX600, NIKKEI225) from ingestion to storage, API and live monitoring dashboards on Linux.</p>
 
     <p><em>Stack:</em></p>
     <ul class="stack-list">
@@ -34,15 +87,15 @@
         class="architecture-image"
       />
       <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
-        Includes <strong>run-level metrics</strong>, structured JSON logs and <strong>CI smoke tests</strong> (GitHub Actions).
+        Includes <strong>observability metrics (SLI/SLO)</strong>, structured JSON logs and <strong>CI smoke tests</strong> (GitHub Actions).
       </div>
     </div>
 
     <p><em>Key Features:</em></p>
     <ul>
-      <li><strong>End-to-end streaming:</strong> Synthetic market ticks streamed through Kafka into DuckDB with Python producer/consumer.</li>
+      <li><strong>End-to-end streaming:</strong> Synthetic market ticks streamed through Kafka into DuckDB with Python producer/consumer, featuring message retry policies.</li>
       <li><strong>Live API:</strong> Flask endpoints exposing prices, volumes and aggregates as JSON.</li>
-      <li><strong>Monitoring mindset:</strong> Run-level metrics (messages processed, errors, duration, max timestamp) stored in DuckDB and logged as JSON.</li>
+      <li><strong>Robust Observability:</strong> Run-level metrics (messages processed, errors, duration, max timestamp) stored in DuckDB and logged as JSON.</li>
       <li><strong>Grafana dashboards:</strong> Infinity datasource reading from the API to display live prices, volumes and summary tables.</li>
       <li><strong>DevOps practices:</strong> Docker-based Kafka, bash <code>runpipeline.sh</code> script and GitHub Actions smoke tests.</li>
     </ul>
@@ -67,7 +120,7 @@
   </article>
 
   <article class="project-article">
-    <p><em>Objective:</em> Automation of financial market sectoral performance analysis to optimize investment strategies and detect sector rotation opportunities. The pipeline includes <strong>Data Modeling (Star Schema)</strong>.</p>
+    <p><em>Objective:</em> Automation of financial market sectoral performance analysis to optimize investment strategies and detect sector rotation opportunities. The pipeline implements a robust <strong>Medallion Data Architecture (Star Schema)</strong>.</p>
 
     <p><em>Stack:</em></p>
     <ul class="stack-list">
@@ -112,7 +165,7 @@
 
     <p><em>Key Features:</em></p>
     <ul>
-      <li><strong>Dimensional modeling:</strong> Implemented <strong>Star Schema</strong> (fact and dimension tables) on Redshift.</li>
+      <li><strong>Medallion Architecture:</strong> Layered data structuring (Bronze/Silver/Gold) culminating in a <strong>Star Schema</strong> (fact and dimension tables) on Redshift.</li>
       <li><strong>Data quality:</strong> dbt tests and lineage documentation for robust analytics.</li>
       <li><strong>Performance analysis:</strong> Sectoral returns, momentum and relative performance.</li>
       <li><strong>Risk management:</strong> Volatility, VaR and Sharpe ratios by sector.</li>
@@ -158,7 +211,7 @@
       <li><strong>Ingestion/API:</strong> FastAPI (live visitor counter endpoint)</li>
       <li><strong>Processing:</strong> PySpark batch jobs for aggregations and cleaning</li>
       <li><strong>Orchestration:</strong> Airflow DAGs for ingestion and backfill</li>
-      <li><strong>Storage:</strong> DuckDB with partitioned, Parquet-style outputs</li>
+      <li><strong>Storage:</strong> DuckDB (Serving) / Parquet Lakehouse</li>
       <li><strong>Visualization:</strong> Streamlit dashboard deployed as a public app</li>
       <li><strong>Containerization:</strong> Docker for local dev and reproducible runs</li>
       <li><strong>Quality:</strong> High pytest coverage on transforms and API</li>
@@ -172,13 +225,13 @@
         class="architecture-image"
       />
       <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
-        Ingestion via <strong>FastAPI</strong>, batched transforms with <strong>PySpark</strong>, orchestrated by <strong>Airflow</strong>, persisted in <strong>DuckDB</strong> and exposed to analysts through a <strong>Streamlit</strong> dashboard.
+        Ingestion via <strong>FastAPI</strong>, heavy batch <strong>PySpark</strong> transforms on a Datalake, served optimally via a <strong>DuckDB</strong> OLAP layer and exposed to analysts through a <strong>Streamlit</strong> dashboard.
       </div>
     </div>
 
     <p><em>Key Features:</em></p>
     <ul>
-      <li><strong>Scalable processing:</strong> PySpark jobs compute daily and intra-day branch-level footfall KPIs (peaks, averages, rolling windows).</li>
+      <li><strong>Scalable processing:</strong> PySpark efficiently runs huge historical backfills and computes daily and intra-day branch-level footfall KPIs (peaks, averages, rolling windows).</li>
       <li><strong>Operational API:</strong> FastAPI endpoint returns live visitor counts per branch for integration with frontline tools.</li>
       <li><strong>Scenario analysis:</strong> Streamlit dashboard lets managers explore peak periods, compare branches and test staffing scenarios.</li>
       <li><strong>Orchestrated workflows:</strong> Airflow orchestrates both near real-time ingestion and historical backfills for reprocessing.</li>
@@ -189,55 +242,6 @@
       <a href="https://bank-branch-footfall.streamlit.app/">Live App</a> |
       <a href="https://bank-branch-footfall.onrender.com/get_visitor_count?date_time=2025-05-29%2009:05&agency_name=Aix_les_bains_1">Live API</a> |
       <a href="https://github.com/michaelg-create/bank-branch-footfall">Source Code</a>
-    </p>
-  </article>
-</details>
-
-<!-- PROJECT 4 -->
-<details class="project-details">
-  <summary>
-    SQL Spaced Repetition System (<strong>Data App</strong>)
-    (<span class="nowrap">2024</span>)
-  </summary>
-
-  <article class="hero-block">
-    <img src="assets/images/srs-sql-hero.png"
-         alt="SQL spaced repetition app screenshot"
-         class="hero-image" />
-  </article>
-
-  <article class="project-article">
-    <p><em>Objective:</em> Learn (and retain) the most useful <strong>SQL</strong> commands with a spaced repetition system tailored to data practitioners.</p>
-
-    <p><em>Stack:</em></p>
-    <ul class="stack-list">
-      <li><strong>Language:</strong> Python</li>
-      <li><strong>Database:</strong> SQL, DuckDB</li>
-      <li><strong>Frontend:</strong> Streamlit</li>
-    </ul>
-
-    <h3>Workflow</h3>
-    <div class="architecture-diagram">
-      <img
-        src="assets/images/srs-sql-workflow.png"
-        alt="SQL spaced repetition workflow from curated exercises through DuckDB and scheduler to Streamlit UI"
-        class="architecture-image"
-      />
-      <div style="margin-top: 15px; font-size: 0.9em; opacity: 0.8;">
-        Curated SQL exercises stored in <strong>DuckDB</strong>, scheduled by a review engine and surfaced in a <strong>Streamlit</strong> UI with progress tracking.
-      </div>
-    </div>
-
-    <p><em>Key Features:</em></p>
-    <ul>
-      <li><strong>Active learning:</strong> Card-based review of practical SQL queries and patterns.</li>
-      <li><strong>Progress tracking:</strong> Performance history stored in DuckDB to adapt repetition.</li>
-      <li><strong>Lightweight deployment:</strong> Streamlit app for quick local or cloud hosting.</li>
-    </ul>
-
-    <p><em>Links:</em>
-      <a href="https://space-sql.streamlit.app/">Live App</a> |
-      <a href="https://github.com/michaelg-create/SRS_SQL">Source Code</a>
     </p>
   </article>
 </details>
